@@ -12,10 +12,10 @@ export default function Layout({ children }: LayoutProps) {
   const pathname = usePathname();
 
   return (
-    <body>
+    <>
       <Header pathname={pathname} />
       <main>{children}</main>
       <Footer />
-    </body>
+    </>
   );
 }

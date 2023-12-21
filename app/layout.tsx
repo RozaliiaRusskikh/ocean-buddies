@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import Layout from "@/components/Layout";
-import React from "react";
-
-const inter = Inter({ subsets: ["latin"] });
+import "@/styles/globals.css";
 
 export const metadata: Metadata = {
   title: "Ocean Buddies",
@@ -20,7 +17,9 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
-      <Layout>{children}</Layout>
+      <body>
+        <Layout>{children}</Layout>
+      </body>
     </html>
   );
 }
