@@ -1,26 +1,23 @@
 import { LayoutX } from "./LayoutX";
-import { Heading, Text } from "./Text";
+import { Heading } from "./Text";
+import type { StaticImageData } from "next/image";
 
-export function Hero({ data }) {
-  const { title, description, image } = data;
+interface HeroProps {
+  title: string;
+  description: string;
+  image: StaticImageData;
+}
+
+export const Hero: React.FC<HeroProps> = ({ title, description, image }) => {
   return (
     <LayoutX
       className="min-h-[504px] bg-no-repeat bg-cover bg-center"
-      style={{ backgroundImage: `url(${urlForImage(image).url()})` }}
+      style={{ backgroundImage: `url(${image.src})` }}
     >
-      <Heading
-        as="h1"
-        data-aos="fade-up"
-        data-aos-delay="100"
-        className="mb-8 relative after:w-10 after:h-[6px] after:bg-primary after:absolute after:-bottom-2 after:left-0"
-      >
+      <Heading as="h1" className="mb-8">
         {title}
       </Heading>
-      <div data-aos="fade-up" data-aos-delay="200" className="max-w-[480px]">
-        {description.split("\n").map((line, i) => (
-          <Text key={i}>{line}</Text>
-        ))}
-      </div>
+      <div className="max-w-[480px]">{description}</div>
     </LayoutX>
   );
-}
+};

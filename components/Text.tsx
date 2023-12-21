@@ -8,7 +8,7 @@ interface TextProps {
 interface HeadingProps {
   as?: React.ElementType;
   className?: string;
-  size: "heading" | "subheading" | "super";
+  size?: "heading" | "subheading" | "super";
   children?: React.ReactNode;
 }
 
