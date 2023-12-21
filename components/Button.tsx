@@ -21,16 +21,14 @@ export function Button({
     accent: "bg-secondary text-background",
   };
 
-  const styles = `py-[1.125rem] pl-8 pr-16 md:pl-16 md:pr-20 relative group ${colors[color]} ${className}`;
+  const styles = `py-3 pl-8 pr-16 md:pl-10 md:pr-[4.5rem] border-[1px] border-secondary rounded relative group ${colors[color]} ${className}`;
 
   return (
     <Link href={link}>
       <button type="button" className={styles} {...props}>
         <Text
           size="button"
-          className={`transition-transform duration-200 group-hover:-translate-x-1 ${
-            color === "dark" && "font-400"
-          }`}
+          className="transition-transform duration-200 group-hover:-translate-x-1"
         >
           {children}
         </Text>
@@ -39,8 +37,8 @@ export function Button({
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={2}
-          stroke="currentColor"
-          className="w-6 h-6 absolute right-8 top-1/2 transform -translate-y-1/2 transition-transform duration-200 group-hover:translate-x-4"
+          stroke="#129DC0"
+          className="w-6 h-6 absolute right-8 top-1/2 transform -translate-y-1/2 transition-transform duration-200 group-hover:translate-x-2"
         >
           <path
             strokeLinecap="round"

@@ -1,5 +1,6 @@
+import { Button } from "./Button";
 import { LayoutX } from "./LayoutX";
-import { Heading } from "./Text";
+import { Heading, Text } from "./Text";
 import type { StaticImageData } from "next/image";
 
 interface HeroProps {
@@ -11,13 +12,24 @@ interface HeroProps {
 export const Hero: React.FC<HeroProps> = ({ title, description, image }) => {
   return (
     <LayoutX
-      className="min-h-[504px] bg-no-repeat bg-cover bg-center"
+      className="min-h-[65vh] bg-no-repeat bg-cover bg-center"
       style={{ backgroundImage: `url(${image.src})` }}
     >
-      <Heading as="h1" className="mb-8">
-        {title}
-      </Heading>
-      <div className="max-w-[480px]">{description}</div>
+      <div className="pt-10 md:pt-12">
+        <Heading as="h1" className="mb-3 md:mb-5 text-slate-100 drop-shadow-md">
+          {title}
+        </Heading>
+        <Text
+          size="super"
+          as="h2"
+          className="max-w-[360px] mb-4 md:mb-5 drop-shadow-sm text-gray-900"
+        >
+          {description}
+        </Text>
+        <Button link="/search" color="dark">
+          Explore
+        </Button>
+      </div>
     </LayoutX>
   );
 };

@@ -8,7 +8,7 @@ interface TextProps {
 interface HeadingProps {
   as?: React.ElementType;
   className?: string;
-  size?: "heading" | "subheading" | "super";
+  size?: "heading" | "subheading";
   children?: React.ReactNode;
 }
 
@@ -20,10 +20,10 @@ export function Text({
   ...props
 }: TextProps) {
   const sizes = {
-    body: "text-base font-300",
-    super: "text-3xl md:text-4xl font-400",
-    button: "text-base font-500",
-    nav: "text-sm font-500",
+    body: "text-base font-light",
+    super: "text-lg md:text-xl font-semibild",
+    button: "text-base md:text-lg font-semibold",
+    nav: "text-sm font-medium",
   };
 
   const styles = `${sizes[size]} ${className}`;
@@ -43,9 +43,8 @@ export function Heading({
   ...props
 }: HeadingProps) {
   const sizes = {
-    heading: "text-lg md:text-3xl font-600 md:font-500 font-dmsans",
-    subheading: "text-base md:text-md font-700 md:font-600",
-    super: "text-md md:text-xl font-600",
+    heading: "text-2xl md:text-3xl font-bold",
+    subheading: "text-base md:text-lg font-semibold",
   };
 
   const styles = `${sizes[size]} ${className}`;

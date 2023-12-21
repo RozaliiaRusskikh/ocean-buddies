@@ -14,15 +14,19 @@ const Header: React.FC<HeaderProps> = ({ pathname }) => {
     { title: "Login", path: "/login" },
   ];
   return (
-    <header className="bg-primary text-secondary">
+    <header className="bg-blue-100">
       <LayoutX>
-        <div className="h-20 flex items-center justify-between gap-12">
-          <Link href="/">
+        <div className="h-16 flex items-center justify-between gap-12">
+          <Link
+            href="/"
+            className="uppercase flex justify-between gap-1 items-end text-secondary font-medium text-lg"
+          >
+            <span className="mb-2">Ocean</span>
             <Image src={logo} alt="Ocean Buddies Logo" height={36} width={36} />
-            Ocean Buddies
+            Buddies
           </Link>
           <nav className="max-w-[585px] w-full">
-            <ul className="flex justify-between w-full">
+            <ul className="flex justify-end gap-7">
               {navMenu.map((navLink, i) => (
                 <NavLink
                   key={i}
