@@ -5,7 +5,7 @@ const Homepage: React.FC = () => {
   const homeHero = {
     title: "Find Dive Buddies",
     description:
-      "Dive safely with Ocean Buddies. Explore the underwater world with like-minded professionals",
+      "Dive safely. Explore the underwater world with like-minded professionals",
   };
   return (
     <>

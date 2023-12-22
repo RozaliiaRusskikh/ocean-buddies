@@ -27,7 +27,7 @@ export const Hero: React.FC<HeroProps> = ({ title, description, image }) => {
           {description}
         </Text>
         <Button link="/search" color="dark">
-          Explore
+          Search
         </Button>
       </div>
     </LayoutX>
