@@ -13,6 +13,7 @@ const Homepage: React.FC = () => {
         title={homeHero.title}
         description={homeHero.description}
         image={image}
+        buttonLabel="Find"
       />
     </>
   );
