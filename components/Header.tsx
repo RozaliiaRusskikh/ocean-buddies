@@ -2,7 +2,7 @@ import { LayoutX } from "./LayoutX";
 import Link from "next/link";
 import NavLink from "@/components/NavLink";
 import Image from "next/image";
-import logo from "@/public/asests/logo.png";
+import logo from "@/public/assets/logo.png";
 
 interface HeaderProps {
   pathname: string;

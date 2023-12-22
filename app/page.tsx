@@ -1,5 +1,5 @@
 import { Hero } from "@/components/Hero";
-import image from "@/public/asests/divers.webp";
+import image from "@/public/assets/divers.webp";
 
 const Homepage: React.FC = () => {
   const homeHero = {
