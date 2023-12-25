@@ -8,6 +8,7 @@ interface HeroProps {
   description: string;
   image: StaticImageData;
   buttonLabel: string;
+  link: string;
 }
 
 export const Hero: React.FC<HeroProps> = ({
@@ -15,13 +16,14 @@ export const Hero: React.FC<HeroProps> = ({
   description,
   image,
   buttonLabel,
+  link,
 }) => {
   return (
     <LayoutX
-      className="min-h-[65vh] bg-no-repeat bg-cover bg-center"
+      className="min-h-[50vh] sm:min-h-[95vh] bg-no-repeat bg-cover bg-right md:bg-center"
       style={{ backgroundImage: `url(${image.src})` }}
     >
-      <div className="pt-10 md:pt-12">
+      <div className="pt-10 md:pt-32">
         <Heading as="h1" className="mb-3 md:mb-5 text-slate-100 drop-shadow-md">
           {title}
         </Heading>
@@ -32,7 +34,7 @@ export const Hero: React.FC<HeroProps> = ({
         >
           {description}
         </Text>
-        <Button link="/search" color="dark">
+        <Button link={link} color="dark">
           {buttonLabel}
         </Button>
       </div>

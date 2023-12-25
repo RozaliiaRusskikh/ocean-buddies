@@ -10,16 +10,16 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ pathname }) => {
   const navMenu = [
-    { title: "Join", path: "/signup" },
+    { title: "Join", path: "/register" },
     { title: "Login", path: "/login" },
   ];
   return (
-    <header className="bg-blue-100">
+    <header className="bg-gradient-to-t from-blue-400 to-blue-100">
       <LayoutX>
         <div className="h-16 flex items-center justify-between gap-12">
           <Link
             href="/"
-            className="uppercase flex justify-between gap-1 items-end text-secondary font-medium text-lg"
+            className="uppercase flex justify-between gap-1 items-end font-medium text-lg"
           >
             <span className="mb-2">Ocean</span>
             <Image src={logo} alt="Ocean Buddies Logo" height={36} width={36} />
