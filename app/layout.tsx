@@ -3,8 +3,9 @@ import Layout from "@/components/Layout";
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {
-  title: "Ocean Buddies",
-  description: "Find Dive Buddies",
+  title: "Ocean Buddies | Search for divers around the world",
+  description: "Find Dive Buddies near your location",
+  keywords: ["Dive", "Buddies", "PADI", "Search", "Find", "Divers"],
   icons: {
     icon: "./icon.ico",
   },
