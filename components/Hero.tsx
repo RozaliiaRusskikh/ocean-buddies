@@ -24,7 +24,10 @@ export const Hero: React.FC<HeroProps> = ({
       style={{ backgroundImage: `url(${image.src})` }}
     >
       <div className="pt-10 md:pt-32">
-        <Heading as="h1" className="mb-3 md:mb-5 text-slate-100 drop-shadow-md">
+        <Heading
+          as="h1"
+          className="mb-3 md:mb-5 text-slate-100 drop-shadow-md font-rajdhani"
+        >
           {title}
         </Heading>
         <Text

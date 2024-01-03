@@ -14,7 +14,7 @@ const Header: React.FC<HeaderProps> = ({ pathname }) => {
     { title: "Login", path: "/login" },
   ];
   return (
-    <header className="bg-gradient-to-t from-blue-400 to-blue-100">
+    <header className="bg-gradient-to-t from-blue-400 to-blue-100 font-rajdhani">
       <LayoutX>
         <div className="h-16 flex items-center justify-between gap-12">
           <Link

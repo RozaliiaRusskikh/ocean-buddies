@@ -21,7 +21,7 @@ export function Text({
 }: TextProps) {
   const sizes = {
     body: "text-base font-light",
-    super: "text-lg md:text-xl font-semibild",
+    super: "text-lg md:text-xl font-semibold",
     button: "text-base md:text-lg font-semibold",
     nav: "text-sm font-medium",
   };
@@ -43,7 +43,7 @@ export function Heading({
   ...props
 }: HeadingProps) {
   const sizes = {
-    heading: "text-3xl md:text-4xl font-bold",
+    heading: "text-3xl md:text-5xl font-bold",
     subheading: "text-base md:text-lg font-semibold",
   };
 

@@ -6,7 +6,7 @@ import image from "@/public/assets/divers.webp";
 import { useState } from "react";
 
 const Homepage: React.FC = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   const homeHero = {
     title: "Find Dive Buddies",
