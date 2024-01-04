@@ -1,7 +1,7 @@
 "use client";
 
-import { Hero } from "@/components/Hero";
-import Search from "@/components/Search";
+import { Hero } from "@/app/(site)/components/Hero";
+import Search from "@/app/(site)/components/Search";
 import image from "@/public/assets/divers.webp";
 import { useState } from "react";
 

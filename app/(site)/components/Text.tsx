@@ -44,7 +44,7 @@ export function Heading({
 }: HeadingProps) {
   const sizes = {
     heading: "text-3xl md:text-5xl font-bold",
-    subheading: "text-base md:text-lg font-semibold",
+    subheading: "text-lg md:text-2xl font-semibold",
   };
 
   const styles = `${sizes[size]} ${className}`;

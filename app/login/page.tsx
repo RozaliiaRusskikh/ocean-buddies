@@ -1,9 +1,7 @@
+import AuthPage from "../(site)/components/AuthPage";
+
 const Login: React.FC = () => {
-  return (
-    <>
-      <div>Login</div>
-    </>
-  );
+  return <AuthPage title="Sign in to your diver account" />;
 };
 
 export default Login;

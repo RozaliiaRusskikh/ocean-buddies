@@ -1,6 +1,6 @@
 import { LayoutX } from "./LayoutX";
 import Link from "next/link";
-import NavLink from "@/components/NavLink";
+import NavLink from "@/app/(site)/components/NavLink";
 import Image from "next/image";
 import logo from "@/public/assets/logo.png";
 
