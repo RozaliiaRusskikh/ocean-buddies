@@ -28,7 +28,7 @@ export const Hero: React.FC<HeroProps> = ({
   useEffect(() => {
     const timeout = setTimeout(() => {
       setAnimateArrow(false);
-    }, 3000);
+    }, 2000);
 
     return () => clearTimeout(timeout);
   }, []);
@@ -57,7 +57,7 @@ export const Hero: React.FC<HeroProps> = ({
         </Button>
       </div>
       <div
-        className={`absolute bottom-0 left-1/2 mb-8 ${
+        className={`absolute bottom-0 left-1/2 mb-12 ${
           animateArrow ? "animate-bounce" : ""
         }`}
       >
