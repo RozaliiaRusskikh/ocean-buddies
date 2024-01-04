@@ -32,7 +32,7 @@ export default function Layout({ children }: LayoutProps) {
         }
       `}</style>
       <Header pathname={pathname} />
-      <main>{children}</main>
+      <main className="min-h-screen">{children}</main>
       <Footer />
     </>
   );

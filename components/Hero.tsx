@@ -57,7 +57,7 @@ export const Hero: React.FC<HeroProps> = ({
         </Button>
       </div>
       <div
-        className={`absolute bottom-0 left-1/2 mb-12 ${
+        className={`absolute bottom-0 left-1/2 mb-12 z-10 ${
           animateArrow ? "animate-bounce" : ""
         }`}
       >
