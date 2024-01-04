@@ -1,14 +1,18 @@
-import { LayoutX } from "./LayoutX";
+import { Text } from "./Text";
 import Image from "next/image";
 import logo from "@/public/assets/logo.png";
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
+
   return (
     <footer className="relative w-full text-background">
-      <div className="flex items-center justify-center gap-2 absolute bottom-0 mb-1 md:bottom-1/3 md:mb-2 left-1/2 translate-x-[-50%]">
-        <p className="text-center">
-          &copy; {currentYear} <span>Ocean </span>
+      <div className="flex items-center justify-center gap-2 absolute bottom-1/3 mb-1 md:bottom-1/4 md:mb-2 left-1/2 translate-x-[-50%]">
+        <div className="text-center">
+          &copy; {currentYear}{" "}
+          <Text size="body" className="inline">
+            Ocean{" "}
+          </Text>
           <Image
             src={logo}
             alt="Ocean Buddies Logo"
@@ -16,12 +20,17 @@ const Footer: React.FC = () => {
             width={24}
             className="inline"
           />
-          <span> Buddies</span>
-          <span className="block md:mt-1">All Rights Reserved.</span>
-        </p>
+          <Text size="body" className="inline">
+            {" "}
+            Buddies
+          </Text>
+          <Text size="body" className="block md:mt-1">
+            All Rights Reserved.
+          </Text>
+        </div>
       </div>
       <svg
-        viewBox="0 0 1280 150"
+        viewBox="0 0 1280 372"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className="w-full"
