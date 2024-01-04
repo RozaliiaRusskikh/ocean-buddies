@@ -1,7 +1,12 @@
+"use client";
+
 import { Button } from "./Button";
+import Image from "next/image";
 import { LayoutX } from "./LayoutX";
 import { Heading, Text } from "./Text";
 import type { StaticImageData } from "next/image";
+import arrow from "@/public/assets/down-arrow.svg";
+import { useState, useEffect } from "react";
 
 interface HeroProps {
   title: string;
@@ -18,9 +23,19 @@ export const Hero: React.FC<HeroProps> = ({
   buttonLabel,
   link,
 }) => {
+  const [animateArrow, setAnimateArrow] = useState(true);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setAnimateArrow(false);
+    }, 3000);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
     <LayoutX
-      className="min-h-[50vh] sm:min-h-[95vh] bg-no-repeat bg-cover bg-right md:bg-center"
+      className="min-h-[50vh] sm:min-h-[95vh] bg-no-repeat bg-cover bg-right md:bg-center relative"
       style={{ backgroundImage: `url(${image.src})` }}
     >
       <div className="pt-10 md:pt-32">
@@ -40,6 +55,13 @@ export const Hero: React.FC<HeroProps> = ({
         <Button link={link} color="dark">
           {buttonLabel}
         </Button>
+      </div>
+      <div
+        className={`absolute bottom-0 left-1/2 mb-8 ${
+          animateArrow ? "animate-bounce" : ""
+        }`}
+      >
+        <Image src={arrow} alt="Down Arrow" />
       </div>
     </LayoutX>
   );

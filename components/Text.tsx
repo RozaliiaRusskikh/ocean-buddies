@@ -23,7 +23,7 @@ export function Text({
     body: "text-base font-light",
     super: "text-lg md:text-xl font-semibold",
     button: "text-base md:text-lg font-semibold",
-    nav: "text-sm font-medium",
+    nav: "text-sm md:text-base font-medium",
   };
 
   const styles = `${sizes[size]} ${className}`;

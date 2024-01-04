@@ -1,8 +1,8 @@
+import image from "@/public/assets/rocks.png";
+
 const Search: React.FC = () => {
   return (
-    <>
-      <div>Search</div>
-    </>
+    <div className="bg-primary min-h-72 h-full text-background">Search</div>
   );
 };
 
