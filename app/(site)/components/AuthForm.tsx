@@ -39,7 +39,11 @@ const AuthForm = () => {
       //NextAuth SignIn
     }
   };
-  return <div>AuthForm2</div>;
+  return (
+    <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-lg">
+      <div className="bg-background px-4 py-8 shadow sm:rounded-lg sm:px-10"></div>
+    </div>
+  );
 };
 
 export default AuthForm;

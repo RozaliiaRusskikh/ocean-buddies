@@ -21,9 +21,9 @@ const Header: React.FC<HeaderProps> = ({ pathname }) => {
             href="/"
             className="uppercase flex justify-between gap-1 items-end font-medium text-lg"
           >
-            <span className="mb-2">Ocean</span>
+            <span className="hidden sm:inline mb-2">Ocean</span>
             <Image src={logo} alt="Ocean Buddies Logo" height={36} width={36} />
-            Buddies
+            <span className="hidden sm:inline">Buddies</span>
           </Link>
           <nav className="max-w-[585px] w-full">
             <ul className="flex justify-end gap-7">
