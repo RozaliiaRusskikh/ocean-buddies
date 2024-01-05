@@ -8,3 +8,7 @@ body {
   background-color: #f2f2f2;
   margin: 0;
 }
+
+[data-aos="fade-in"] {
+  transform: translate3d(0, 8px, 0);
+}

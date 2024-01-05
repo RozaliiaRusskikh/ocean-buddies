@@ -4,13 +4,19 @@ import Image from "next/image";
 import { Heading } from "./Text";
 import AuthForm from "../components/AuthForm";
 import { usePathname } from "next/navigation";
-import { LayoutX } from "./LayoutX";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 interface AuthPageProps {
   title: string;
 }
 
 const AuthPage: React.FC<AuthPageProps> = ({ title }) => {
+  useEffect(() => {
+    AOS.init({ duration: 400, easing: "ease-in", once: true, delay: 25 });
+  }, []);
+
   const pathname = usePathname();
 
   let variant = "";
@@ -31,7 +37,11 @@ const AuthPage: React.FC<AuthPageProps> = ({ title }) => {
           className="mx-auto w-auto"
           src={"/assets/logo.png"}
         />
-        <Heading size="subheading" className="text-center mt-6 tracking-tight">
+        <Heading
+          size="subheading"
+          className="text-center mt-6 tracking-tight"
+          data-aos="fade-in"
+        >
           {title}
         </Heading>
       </div>

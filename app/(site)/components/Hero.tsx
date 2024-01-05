@@ -7,6 +7,8 @@ import { Heading, Text } from "./Text";
 import type { StaticImageData } from "next/image";
 import arrow from "@/public/assets/down-arrow.svg";
 import { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 interface HeroProps {
   title: string;
@@ -33,6 +35,10 @@ export const Hero: React.FC<HeroProps> = ({
     return () => clearTimeout(timeout);
   }, []);
 
+  useEffect(() => {
+    AOS.init({ duration: 300, easing: "ease-in", once: true, delay: 25 });
+  }, []);
+
   return (
     <LayoutX
       className="min-h-[50vh] sm:min-h-[95vh] bg-no-repeat bg-cover bg-right md:bg-center relative"
@@ -42,6 +48,7 @@ export const Hero: React.FC<HeroProps> = ({
         <Heading
           as="h1"
           className="mb-3 md:mb-5 text-slate-100 drop-shadow-md font-rajdhani"
+          data-aos="fade-in"
         >
           {title}
         </Heading>
@@ -49,6 +56,7 @@ export const Hero: React.FC<HeroProps> = ({
           size="super"
           as="h2"
           className="max-w-[360px] mb-4 md:mb-5 drop-shadow-sm text-gray-900"
+          data-aos="fade-in"
         >
           {description}
         </Text>
