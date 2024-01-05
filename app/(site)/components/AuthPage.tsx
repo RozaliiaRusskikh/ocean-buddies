@@ -1,16 +1,29 @@
+"use client";
+
 import Image from "next/image";
 import { Heading } from "./Text";
 import AuthForm from "../components/AuthForm";
+import { usePathname } from "next/navigation";
+import { LayoutX } from "./LayoutX";
 
 interface AuthPageProps {
   title: string;
-  variant: string;
 }
 
-const AuthPage: React.FC<AuthPageProps> = ({ title, variant }) => {
+const AuthPage: React.FC<AuthPageProps> = ({ title }) => {
+  const pathname = usePathname();
+
+  let variant = "";
+
+  if (pathname === "/register") {
+    variant = "REGISTER";
+  } else if (pathname === "/login") {
+    variant = "LOGIN";
+  }
+
   return (
     <div className="flex min-h-screen flex-col justify-center items-center py-12 sm:px-6 lg:px-8">
-      <div className="sm:mx-auto sm:w-full sm:max-w-lg">
+      <div className="max-w-xs sm:max-w-sm">
         <Image
           alt="logo"
           height={40}
