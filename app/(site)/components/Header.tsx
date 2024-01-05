@@ -19,11 +19,21 @@ const Header: React.FC<HeaderProps> = ({ pathname }) => {
         <div className="h-16 flex items-center justify-between gap-12">
           <Link
             href="/"
-            className="uppercase flex justify-between gap-1 items-end font-medium text-lg"
+            className="uppercase flex justify-between gap-1 items-end font-medium text-lg group"
           >
-            <span className="hidden sm:inline mb-2">Ocean</span>
-            <Image src={logo} alt="Ocean Buddies Logo" height={36} width={36} />
-            <span className="hidden sm:inline">Buddies</span>
+            <span className="hidden sm:inline mb-2 transition-colors ease-in-out duration-400 group-hover:text-sky-600">
+              Ocean
+            </span>
+            <Image
+              src={logo}
+              alt="Ocean Buddies Logo"
+              height={36}
+              width={36}
+              className="transition-transform ease-in duration-300 group-hover:-translate-y-1"
+            />
+            <span className="hidden sm:inline transition-colors ease-in-out duration-400 group-hover:text-sky-600">
+              Buddies
+            </span>
           </Link>
           <nav className="max-w-[585px] w-full">
             <ul className="flex justify-end gap-7">
