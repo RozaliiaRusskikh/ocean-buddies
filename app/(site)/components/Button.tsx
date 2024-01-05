@@ -16,9 +16,9 @@ export function Button({
   ...props
 }: ButtonProps) {
   const colors = {
-    light: "bg-background text-primary",
+    light: "bg-background text-secondary",
     dark: "bg-primary text-background",
-    accent: "bg-secondary text-background",
+    accent: "bg-background text-primary",
   };
 
   const styles = `py-3 pl-8 pr-16 md:pl-10 md:pr-[4.5rem] border-[1px] border-secondary rounded relative group ${colors[color]} ${className}`;
