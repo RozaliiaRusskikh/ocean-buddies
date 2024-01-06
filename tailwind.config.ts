@@ -19,19 +19,18 @@ const config: Config = {
       },
       keyframes: {
         bounce: {
-          "0%, 20%, 50%, 80%, 100%": {
+          "0%, 100%": {
+            transform: "translateY(-25%)",
+            animationTimingFunction: "cubic-bezier(0.8, 0, 1, 1)",
+          },
+          "50%": {
             transform: "translateY(0)",
-          },
-          "40%": {
-            transform: "translateY(-30px)",
-          },
-          "60%": {
-            transform: "translateY(-15px)",
+            animationTimingFunction: "cubic-bezier(0, 0, 0.2, 1)",
           },
         },
       },
       animation: {
-        bounce: "bounce 3s infinite",
+        bounce: "bounce 1s infinite",
       },
     },
   },
