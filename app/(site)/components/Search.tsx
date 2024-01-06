@@ -7,6 +7,7 @@ const Search: React.FC = () => {
       <Image
         src={image}
         alt="rocks"
+        priority={true}
         className="absolute bottom-[50%] lg:right-[40%]"
       />
     </div>

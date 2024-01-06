@@ -44,7 +44,7 @@ export function Button({
       >
         <Text
           size="button"
-          className="transition-transform duration-200 group-hover:-translate-x-1"
+          className="transition-transform duration-200 group-hover:-translate-x-1 uppercase"
         >
           {children}
         </Text>
