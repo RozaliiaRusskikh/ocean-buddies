@@ -9,6 +9,7 @@ import arrow from "@/public/assets/down-arrow.svg";
 import { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { rajdhani } from "../fonts";
 
 interface HeroProps {
   title: string;
@@ -47,7 +48,7 @@ export const Hero: React.FC<HeroProps> = ({
       <div className="pt-10 md:pt-32">
         <Heading
           as="h1"
-          className="mb-3 md:mb-5 text-slate-100 drop-shadow-md font-rajdhani"
+          className={`mb-3 md:mb-5 text-slate-100 drop-shadow-md ${rajdhani.className} antialiased`}
           data-aos="fade-in"
         >
           {title}

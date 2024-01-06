@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Layout from "@/app/(site)/components/Layout";
 import "@/styles/globals.css";
+import { nunito_sans } from "./fonts";
 
 export const metadata: Metadata = {
   title: "Ocean Buddies | Find Divers",
@@ -19,7 +20,7 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
-      <body>
+      <body className={`${nunito_sans.className} antialiased`}>
         <Layout>{children}</Layout>
       </body>
     </html>

@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { rajdhani } from "../fonts";
 
 interface AuthPageProps {
   title: string;
@@ -39,7 +40,7 @@ const AuthPage: React.FC<AuthPageProps> = ({ title }) => {
         />
         <Heading
           size="subheading"
-          className="text-center mt-6 tracking-tight"
+          className={`text-center mt-6 tracking-tight ${rajdhani.className} antialiased`}
           data-aos="fade-in"
         >
           {title}

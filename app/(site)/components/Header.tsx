@@ -3,6 +3,7 @@ import Link from "next/link";
 import NavLink from "@/app/(site)/components/NavLink";
 import Image from "next/image";
 import logo from "@/public/assets/logo.png";
+import { rajdhani } from "../fonts";
 
 interface HeaderProps {
   pathname: string;
@@ -14,7 +15,9 @@ const Header: React.FC<HeaderProps> = ({ pathname }) => {
     { title: "Login", path: "/login" },
   ];
   return (
-    <header className="bg-gradient-to-t from-blue-400 to-blue-100 font-rajdhani">
+    <header
+      className={`bg-gradient-to-t from-blue-400 to-blue-100 ${rajdhani.className} antialiased`}
+    >
       <LayoutX>
         <div className="h-16 flex items-center justify-between gap-12">
           <Link
