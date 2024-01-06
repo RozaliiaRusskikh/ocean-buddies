@@ -29,7 +29,7 @@ const Header: React.FC<HeaderProps> = ({ pathname }) => {
               alt="Ocean Buddies Logo"
               height={36}
               width={36}
-              className="transition-transform ease-in duration-300 group-hover:-translate-y-1"
+              className="transform transition-all group-hover:scale-110"
             />
             <span className="hidden sm:inline transition-color ease-in-out duration-400 group-hover:text-sky-600">
               Buddies
