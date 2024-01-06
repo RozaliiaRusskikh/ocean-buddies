@@ -2,13 +2,20 @@ import Link from "next/link";
 import { Text } from "./Text";
 
 interface ButtonProps {
+  type: "button" | "submit";
   color?: "light" | "dark" | "accent";
   link?: string;
   className?: string;
   children: React.ReactNode;
+  onClick?: () => void;
+  disabled?: boolean;
+  danger?: boolean;
 }
 
 export function Button({
+  disabled,
+  danger,
+  onClick,
   color = "light",
   link = "",
   className = "",
@@ -21,11 +28,20 @@ export function Button({
     accent: "bg-background text-primary",
   };
 
-  const styles = `py-3 pl-8 pr-16 md:pl-10 md:pr-[4.5rem] border-[1px] border-secondary rounded relative group ${colors[color]} ${className}`;
+  const styles = `py-3 pl-8 pr-16 md:pl-10 md:pr-[4.5rem] border-[1px] border-secondary rounded relative group ${
+    colors[color]
+  } ${disabled && "opacity-500 cursor-default"} ${
+    danger && "bg-rose-500 hover:bg-rose-600 focus-visible:outline-rose-600"
+  }`;
 
   return (
     <Link href={link}>
-      <button type="button" className={styles} {...props}>
+      <button
+        className={styles}
+        {...props}
+        onClick={onClick}
+        disabled={disabled}
+      >
         <Text
           size="button"
           className="transition-transform duration-200 group-hover:-translate-x-1"

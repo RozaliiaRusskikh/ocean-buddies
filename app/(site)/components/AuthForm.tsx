@@ -1,5 +1,5 @@
 "use client";
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import { FieldValues, SubmitErrorHandler, useForm } from "react-hook-form";
 import Input from "./Input";
 import { Button } from "./Button";
@@ -56,7 +56,9 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
             errors={errors}
           />
           <div>
-            <Button color="light">{variant}</Button>
+            <Button type="submit" disabled={isLoading} color="light">
+              {variant}
+            </Button>
           </div>
         </form>
       </div>

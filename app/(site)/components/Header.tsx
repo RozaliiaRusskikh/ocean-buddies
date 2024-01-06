@@ -21,7 +21,7 @@ const Header: React.FC<HeaderProps> = ({ pathname }) => {
             href="/"
             className="uppercase flex justify-between gap-1 items-end font-medium text-lg group"
           >
-            <span className="hidden sm:inline mb-2 transition-colors ease-in-out duration-400 group-hover:text-sky-600">
+            <span className="hidden sm:inline mb-2 transition-color ease-in-out duration-400 group-hover:text-sky-600">
               Ocean
             </span>
             <Image
@@ -31,7 +31,7 @@ const Header: React.FC<HeaderProps> = ({ pathname }) => {
               width={36}
               className="transition-transform ease-in duration-300 group-hover:-translate-y-1"
             />
-            <span className="hidden sm:inline transition-colors ease-in-out duration-400 group-hover:text-sky-600">
+            <span className="hidden sm:inline transition-color ease-in-out duration-400 group-hover:text-sky-600">
               Buddies
             </span>
           </Link>

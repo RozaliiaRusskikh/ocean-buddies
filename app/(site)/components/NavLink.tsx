@@ -9,9 +9,9 @@ interface NavLinkProps {
 
 export default function NavLink({ title, path, pathname }: NavLinkProps) {
   const activeStyles =
-    "border-b-2 border-secondary transition-all duration-400 hover:text-background hover:border-primary";
+    "border-b-2 border-secondary transition-all hover:text-background hover:border-primary";
 
-  const inactiveStyles = "hover:text-background transition duration-400";
+  const inactiveStyles = "hover:text-background transition-all ";
 
   const styles = `uppercase ${
     path === pathname ? activeStyles : inactiveStyles
