@@ -32,7 +32,7 @@ export function Button({
     colors[color]
   } ${disabled && "opacity-500 cursor-default"} ${
     danger && "bg-rose-500 hover:bg-rose-600 focus-visible:outline-rose-600"
-  }`;
+  } ${className}`;
 
   return (
     <Link href={link}>

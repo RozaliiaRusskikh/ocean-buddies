@@ -55,7 +55,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
             register={register}
             errors={errors}
           />
-          <div>
+          <div className="flex flex-col items-center">
             <Button type="submit" disabled={isLoading} color="light">
               {variant}
             </Button>
