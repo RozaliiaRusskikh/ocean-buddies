@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { rajdhani } from "../fonts";
+import image from "@/public/assets/jellyfish-background.jpg";
 
 interface AuthPageProps {
   title: string;
@@ -29,7 +30,10 @@ const AuthPage: React.FC<AuthPageProps> = ({ title }) => {
   }
 
   return (
-    <div className="flex min-h-screen flex-col justify-center items-center py-12 sm:px-6 lg:px-8">
+    <div
+      className="flex min-h-screen flex-col justify-center items-center py-12 sm:px-6 lg:px-8 bg-no-repeat bg-cover bg-center bg-fixed"
+      style={{ backgroundImage: `url(${image.src})` }}
+    >
       <div className="max-w-xs sm:max-w-sm">
         <Image
           alt="logo"
@@ -40,7 +44,7 @@ const AuthPage: React.FC<AuthPageProps> = ({ title }) => {
         />
         <Heading
           size="subheading"
-          className={`text-center mt-6 tracking-tight ${rajdhani.className} antialiased`}
+          className={`text-center mt-6 tracking-tight bg-sky-950 text-background p-2 ${rajdhani.className} antialiased`}
           data-aos="fade-in"
         >
           {title}
