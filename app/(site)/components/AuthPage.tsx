@@ -44,7 +44,7 @@ const AuthPage: React.FC<AuthPageProps> = ({ title }) => {
         />
         <Heading
           size="subheading"
-          className={`text-center mt-6 tracking-tight bg-sky-950 text-background p-2 ${rajdhani.className} antialiased`}
+          className={`text-center mt-6 tracking-tigh text-background ${rajdhani.className} antialiased`}
           data-aos="fade-in"
         >
           {title}
