@@ -1,5 +1,6 @@
-import { Hero } from "@/app/(site)/components/Hero";
-import Search from "@/app/(site)/components/Search";
+import { Hero } from "@/app/components/Hero";
+import HowItWorks from "@/app/components/HowItWorks";
+import Search from "@/app/components/HowItWorks";
 import image from "@/public/assets/divers.webp";
 
 const Homepage: React.FC = () => {
@@ -19,7 +20,7 @@ const Homepage: React.FC = () => {
         link="/register"
         data-aos="fade-in"
       />
-      <Search />
+      <HowItWorks />
     </>
   );
 };

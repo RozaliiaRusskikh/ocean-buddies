@@ -39,7 +39,13 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
       <div className="bg-background px-4 py-8 shadow sm:rounded-lg sm:px-10">
         <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
           {variant === "REGISTER" && (
-            <Input id="name" label="Name" register={register} errors={errors} />
+            <Input
+              id="name"
+              label="Name"
+              register={register}
+              errors={errors}
+              disabled={isLoading}
+            />
           )}
           <Input
             id="email"
@@ -47,6 +53,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
             type="email"
             register={register}
             errors={errors}
+            disabled={isLoading}
           />
           <Input
             id="pasword"
@@ -54,6 +61,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
             type="passwor"
             register={register}
             errors={errors}
+            disabled={isLoading}
           />
           <div className="flex flex-col items-center">
             <Button type="submit" disabled={isLoading} color="light">

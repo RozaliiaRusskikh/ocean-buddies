@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative w-full text-background">
+    <footer className="relative w-full text-background bg-primary">
       <div className="flex items-center justify-center gap-2 absolute bottom-1/3 mb-1 md:bottom-1/4 md:mb-2 left-1/2 translate-x-[-50%]">
         <div className="text-center">
           &copy; {currentYear}{" "}

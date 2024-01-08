@@ -2,12 +2,12 @@
 
 import Image from "next/image";
 import { Heading } from "./Text";
-import AuthForm from "../components/AuthForm";
+import AuthForm from "./AuthForm";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { rajdhani } from "../fonts";
+import { rajdhani } from "../(site)/fonts";
 import image from "@/public/assets/jellyfish-background.jpg";
 
 interface AuthPageProps {

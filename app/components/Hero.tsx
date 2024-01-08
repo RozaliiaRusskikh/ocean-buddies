@@ -9,7 +9,7 @@ import arrow from "@/public/assets/down-arrow.svg";
 import { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { rajdhani } from "../fonts";
+import { rajdhani } from "../(site)/fonts";
 
 interface HeroProps {
   title: string;

@@ -1,9 +1,9 @@
 import { LayoutX } from "./LayoutX";
 import Link from "next/link";
-import NavLink from "@/app/(site)/components/NavLink";
+import NavLink from "@/app/components/NavLink";
 import Image from "next/image";
 import logo from "@/public/assets/logo.png";
-import { rajdhani } from "../fonts";
+import { rajdhani } from "../(site)/fonts";
 
 interface HeaderProps {
   pathname: string;

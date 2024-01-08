@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Layout from "@/app/(site)/components/Layout";
+import Layout from "@/app/components/Layout";
 import "@/styles/globals.css";
-import { nunito_sans } from "./fonts";
+import { nunito_sans } from "./(site)/fonts";
 
 export const metadata: Metadata = {
   title: "Ocean Buddies | Find Divers",
