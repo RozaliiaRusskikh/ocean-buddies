@@ -3,6 +3,7 @@ import { useState } from "react";
 import { FieldValues, SubmitErrorHandler, useForm } from "react-hook-form";
 import Input from "./Input";
 import { Button } from "./Button";
+import Select from "./Select";
 
 interface AuthFormProps {
   variant: string;
@@ -54,6 +55,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
                 errors={errors}
                 disabled={isLoading}
               />
+              <Select label="Experience" />
             </>
           )}
           <Input
@@ -65,9 +67,9 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
             disabled={isLoading}
           />
           <Input
-            id="pasword"
+            id="password"
             label="Password"
-            type="passwor"
+            type="password"
             register={register}
             errors={errors}
             disabled={isLoading}
