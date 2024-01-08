@@ -3,7 +3,7 @@ import Link from "next/link";
 import NavLink from "@/app/components/NavLink";
 import Image from "next/image";
 import logo from "@/public/assets/logo.png";
-import { rajdhani } from "../(site)/fonts";
+import { rajdhani } from "../fonts";
 
 interface HeaderProps {
   pathname: string;
