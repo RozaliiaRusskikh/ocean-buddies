@@ -31,7 +31,7 @@ export function Button({
 
   const styles = `py-3 pl-8 pr-16 md:pl-10 md:pr-[4.5rem] border-[1px] border-secondary rounded relative group ${
     colors[color]
-  } ${disabled && "bg-gray-100 border-gray-100 text-gray-400 cursor-default"} ${
+  } ${disabled && "bg-gray-100 text-gray-500 border-gray-200 cursor-default"} ${
     danger && "bg-rose-500 hover:bg-rose-600 focus-visible:outline-rose-600"
   } ${className}`;
 

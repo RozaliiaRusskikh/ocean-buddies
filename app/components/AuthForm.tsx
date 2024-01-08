@@ -48,8 +48,8 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
                 disabled={isLoading}
               />
               <Input
-                id="location"
-                label="Location"
+                id="zipcode"
+                label="ZIP Code"
                 register={register}
                 errors={errors}
                 disabled={isLoading}

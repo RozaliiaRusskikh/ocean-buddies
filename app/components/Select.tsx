@@ -5,7 +5,7 @@ interface SelectProps {
   disabled?: boolean;
   label: string;
   onChange: () => void;
-  options: [value: string, label: string];
+  options: string[];
   value: string;
 }
 
@@ -18,7 +18,9 @@ const Select: React.FC<SelectProps> = ({
 }) => {
   return (
     <div>
-      <label className="block text-sm leading-6 text-gray-900">{label}</label>
+      <label className="block text-sm font-medium leading-6 text-gray-900">
+        {label}
+      </label>
       <div className="mt-2"></div>
       <ReactSelect
         value={value}
