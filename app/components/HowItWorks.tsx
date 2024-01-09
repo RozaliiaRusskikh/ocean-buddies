@@ -39,7 +39,7 @@ const HowItWorks: React.FC = () => {
   ];
   return (
     <section
-      className="min-h-screen relative bg-cover bg-no-repeat bg-center bg-fixed"
+      className="min-h-screen md:min-h-[75vh] relative bg-cover bg-no-repeat bg-center bg-fixed"
       style={{ backgroundImage: `url(${underwater.src})` }}
     >
       <Image
@@ -48,7 +48,7 @@ const HowItWorks: React.FC = () => {
         priority={true}
         className="absolute bottom-[90%]"
       />
-      <LayoutX className="md:absolute bottom-[40hv]">
+      <LayoutX>
         <Heading
           size="subheading"
           className={` text-secondary drop-shadow-md py-10 ${rajdhani.className} antialiased`}
@@ -56,7 +56,7 @@ const HowItWorks: React.FC = () => {
         >
           How It Works
         </Heading>
-        <div className="flex flex-col md:flex-row items-center justify-center gap-5 md:gap-20 flex-wrap pb-10">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-5 flex-wrap pb-10">
           {steps.map((step, index) => {
             return <Step key={index} index={index} step={step} />;
           })}
@@ -68,7 +68,7 @@ const HowItWorks: React.FC = () => {
 
 const Step: React.FC<StepProps> = ({ step, index }) => {
   return (
-    <article className="drop sm:w-[50%] md:w-[350px] md:h-[350px] relative flex flex-col justify-center items-center flex-wrap animate-fadein">
+    <article className="drop sm:w-[300px] md:w-[350px] md:h-[350px] relative flex flex-col justify-center items-center flex-wrap animate-fadein">
       <div className="content flex justify-center items-center flex-col text-center">
         <Text size="super" as="p">
           {index + 1}
