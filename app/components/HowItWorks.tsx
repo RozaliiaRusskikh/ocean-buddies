@@ -39,7 +39,7 @@ const HowItWorks: React.FC = () => {
   ];
   return (
     <section
-      className="min-h-screen md:min-h-[75vh] relative bg-cover bg-no-repeat bg-center bg-fixed"
+      className="min-h-screen md:min-h-[70vh] relative bg-cover bg-no-repeat bg-center bg-fixed"
       style={{ backgroundImage: `url(${underwater.src})` }}
     >
       <Image
@@ -51,7 +51,7 @@ const HowItWorks: React.FC = () => {
       <LayoutX>
         <Heading
           size="subheading"
-          className={` text-secondary drop-shadow-md py-10 ${rajdhani.className} antialiased`}
+          className={` text-secondary drop-shadow-md py-10 md:py-20 ${rajdhani.className} antialiased`}
           data-aos="fade-in"
         >
           How It Works
@@ -66,9 +66,10 @@ const HowItWorks: React.FC = () => {
   );
 };
 
+//add links to appropriate pages
 const Step: React.FC<StepProps> = ({ step, index }) => {
   return (
-    <article className="drop sm:w-[300px] md:w-[350px] md:h-[350px] relative flex flex-col justify-center items-center flex-wrap animate-fadein">
+    <article className="drop max-w-[350px] max-h-[350px] relative flex flex-col justify-center items-center flex-wrap animate-fadein">
       <div className="content flex justify-center items-center flex-col text-center">
         <Text size="super" as="p">
           {index + 1}
