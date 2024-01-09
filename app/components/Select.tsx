@@ -30,6 +30,7 @@ const Select: React.FC<SelectProps> = ({
           options={options}
           onChange={onChange}
           isDisabled={disabled}
+          isMulti={isMulti}
         />
       </div>
     </div>
