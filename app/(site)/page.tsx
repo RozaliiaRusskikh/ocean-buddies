@@ -1,6 +1,5 @@
 import { Hero } from "@/app/components/Hero";
 import HowItWorks from "@/app/components/HowItWorks";
-import Search from "@/app/components/HowItWorks";
 import image from "@/public/assets/divers.webp";
 
 const Homepage: React.FC = () => {
