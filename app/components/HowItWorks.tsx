@@ -39,7 +39,7 @@ const HowItWorks: React.FC = () => {
   ];
   return (
     <section
-      className="min-h-screen md:min-h-[70vh] relative bg-cover bg-no-repeat bg-center bg-fixed"
+      className="min-h-full relative bg-cover bg-no-repeat bg-center bg-fixed"
       style={{ backgroundImage: `url(${underwater.src})` }}
     >
       <Image
@@ -51,7 +51,7 @@ const HowItWorks: React.FC = () => {
       <LayoutX>
         <Heading
           size="subheading"
-          className={` text-secondary drop-shadow-md py-10 md:py-20 ${rajdhani.className} antialiased`}
+          className={` text-secondary drop-shadow-md py-10  ${rajdhani.className} antialiased`}
           data-aos="fade-in"
         >
           How It Works
