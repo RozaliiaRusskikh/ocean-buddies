@@ -31,7 +31,7 @@ export function Button({
 
   const styles = `py-3 pl-8 pr-16 md:pl-10 md:pr-[4.5rem] border-[1px] border-secondary rounded relative group ${
     colors[color]
-  } ${disabled && "bg-gray-200 text-gray-600 border-gray-600 cursor-default"} ${
+  } ${disabled && "bg-gray-200 opacity-30 cursor-default"} ${
     danger && "bg-rose-500 hover:bg-rose-600 focus-visible:outline-rose-600"
   } ${className}`;
 
@@ -54,7 +54,7 @@ export function Button({
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={2}
-          stroke={disabled ? "#FFFFFF" : "#129DC0"}
+          stroke="#129DC0"
           className="w-6 h-6 absolute right-8 top-1/2 transform -translate-y-1/2 transition-transform duration-200 group-hover:translate-x-2"
         >
           <path
