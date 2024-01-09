@@ -21,6 +21,16 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
     { value: "master", label: "Master (more than 200 dives)" },
   ];
 
+  const certifications = [
+    { value: "wreck", label: "Wreck Diver" },
+    { value: "openWater", label: "Open Water Diver" },
+    { value: "advancedOpenWater", label: "Advanced Open Water Diver" },
+    { value: "rescue", label: "Rescue Diver" },
+    { value: "master", label: "Dive Master" },
+    { value: "nitrox", label: "Enriched Air Nitrox" },
+    { value: "instructor", label: "Instructor" },
+  ];
+
   const {
     register,
     handleSubmit,
@@ -69,6 +79,12 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
                 options={levels}
                 label="Experience"
                 disabled={isLoading}
+              />
+              <Select
+                options={certifications}
+                label="Certification"
+                disabled={isLoading}
+                isMulti
               />
             </>
           )}

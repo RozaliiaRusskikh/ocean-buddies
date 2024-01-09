@@ -8,10 +8,12 @@ interface SelectProps {
   onChange?: () => void;
   options: Record<string, any>[];
   value?: Record<string, any>;
+  isMulti?: boolean;
 }
 
 const Select: React.FC<SelectProps> = ({
   label,
+  isMulti = false,
   disabled,
   onChange,
   options,
