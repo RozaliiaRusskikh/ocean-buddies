@@ -17,6 +17,15 @@ const config: Config = {
         secondary: "#129DC0",
         background: "#FFFFFF",
       },
+      keyframes: {
+        fadein: {
+          "0%": { opacity: "0%" },
+          "100%": { opacity: "100%" },
+        },
+      },
+      animation: {
+        fadein: "fadein 0.9s linear",
+      },
     },
   },
   plugins: [

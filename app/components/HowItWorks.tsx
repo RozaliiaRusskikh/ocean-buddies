@@ -4,6 +4,15 @@ import underwater from "@/public/assets/underwater.jpeg";
 import { Text, Heading } from "./Text";
 import { rajdhani } from "../fonts";
 import { LayoutX } from "./LayoutX";
+import "@/styles/step.css";
+
+interface StepProps {
+  step: {
+    title: string;
+    description: string;
+  };
+  index: number;
+}
 
 const HowItWorks: React.FC = () => {
   const steps = [
@@ -30,57 +39,47 @@ const HowItWorks: React.FC = () => {
   ];
   return (
     <section
-      className="min-h-72 h-full text-background relative bg-cover bg-no-repeat bg-center bg-fixed"
+      className="min-h-screen relative bg-cover bg-no-repeat bg-center bg-fixed"
       style={{ backgroundImage: `url(${underwater.src})` }}
     >
       <Image
         src={rocks}
         alt="rocks"
         priority={true}
-        className="absolute bottom-[50%] lg:right-[40%]"
+        className="absolute bottom-[90%]"
       />
-      <LayoutX className="absolute bottom-[45%]">
+      <LayoutX className="md:absolute bottom-[40hv]">
         <Heading
           size="subheading"
-          className={` text-slate-100 drop-shadow-md ${rajdhani.className} antialiased`}
+          className={` text-secondary drop-shadow-md py-10 ${rajdhani.className} antialiased`}
           data-aos="fade-in"
         >
           How It Works
         </Heading>
-        {steps.map((step, index) => {
-          return <Step key={index} step={step} />;
-        })}
+        <div className="flex flex-col md:flex-row items-center justify-center gap-5 md:gap-20 flex-wrap pb-10">
+          {steps.map((step, index) => {
+            return <Step key={index} index={index} step={step} />;
+          })}
+        </div>
       </LayoutX>
     </section>
   );
 };
 
-interface StepProps {
-  step: {
-    title: string;
-    description: string;
-  };
-}
-
-const Step: React.FC<StepProps> = ({ step }) => {
+const Step: React.FC<StepProps> = ({ step, index }) => {
   return (
-    <article>
-      <Text
-        size="super"
-        as="h2"
-        className="max-w-[360px] mb-4 md:mb-5 drop-shadow-sm text-gray-900"
-        data-aos="fade-in"
-      >
-        {step.title}
-      </Text>
-      <Text
-        size="super"
-        as="h2"
-        className="max-w-[360px] mb-4 md:mb-5 drop-shadow-sm text-gray-900"
-        data-aos="fade-in"
-      >
-        {step.description}
-      </Text>
+    <article className="drop sm:w-[50%] md:w-[350px] md:h-[350px] relative flex flex-col justify-center items-center flex-wrap animate-fadein">
+      <div className="content flex justify-center items-center flex-col text-center">
+        <Text size="super" as="p">
+          {index + 1}
+        </Text>
+        <Text size="super" as="h2" className="text-background uppercase">
+          {step.title}
+        </Text>
+        <Text size="nav" as="h2" className="text-background">
+          {step.description}
+        </Text>
+      </div>
     </article>
   );
 };

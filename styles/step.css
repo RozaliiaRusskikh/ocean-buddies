@@ -1,0 +1,48 @@
+.drop {
+  border-radius: 67% 33% 28% 72% / 59% 52% 48% 41%;
+  box-shadow: inset 20px 20px 20px rgba(0, 0, 0, 0.05),
+    25px 35px 20px rgba(0, 0, 0, 0.05), 25px 20px 20px rgba(0, 0, 0, 0.05),
+    inset 25px 30px 30px rgba(255, 255, 255, 0.9);
+}
+
+.drop::before {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background-color: #ffffffc8;
+  top: 50px;
+  left: 80px;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+.drop::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: #ffffffc8;
+  top: 90px;
+  left: 110px;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+.drop .content {
+  padding: 40px 50px;
+  gap: 5px;
+}
+.drop .content p {
+  color: #129dc0;
+  margin-bottom: 15px;
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.1),
+    inset -2px -5px 10px rgba(255, 255, 255, 1),
+    15px 15px 10px rgba(0, 0, 0, 0.05), 15px 10px 15px rgba(0, 0, 0, 0.25);
+}
