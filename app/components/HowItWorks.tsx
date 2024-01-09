@@ -69,7 +69,7 @@ const HowItWorks: React.FC = () => {
 //add links to appropriate pages
 const Step: React.FC<StepProps> = ({ step, index }) => {
   return (
-    <article className="drop max-w-[350px] max-h-[350px] relative flex flex-col justify-center items-center flex-wrap animate-fadein">
+    <article className="drop max-w-[350px] max-h-[350px] relative flex flex-col justify-center items-center flex-wrap animate-fadein p-5">
       <div className="content flex justify-center items-center flex-col text-center">
         <Text size="super" as="p">
           {index + 1}
