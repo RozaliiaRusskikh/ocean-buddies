@@ -1,5 +1,6 @@
-import image from "@/public/assets/rocks.png";
+import rocks from "@/public/assets/rocks.png";
 import Image from "next/image";
+import underwater from "@/public/assets/underwater.jpeg";
 
 const HowItWorks: React.FC = () => {
   const steps = {
@@ -13,9 +14,12 @@ const HowItWorks: React.FC = () => {
       "Embark on exciting underwater adventures as you meet and dive together",
   };
   return (
-    <section className="min-h-72 h-full text-background relative">
+    <section
+      className="min-h-72 h-full text-background relative bg-cover bg-no-repeat bg-center bg-fixed"
+      style={{ backgroundImage: `url(${underwater.src})` }}
+    >
       <Image
-        src={image}
+        src={rocks}
         alt="rocks"
         priority={true}
         className="absolute bottom-[50%] lg:right-[40%]"

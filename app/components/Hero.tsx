@@ -42,7 +42,7 @@ export const Hero: React.FC<HeroProps> = ({
 
   return (
     <LayoutX
-      className="min-h-[50vh] sm:min-h-[95vh] bg-no-repeat bg-cover bg-right md:bg-center relative"
+      className="min-h-[95vh] bg-no-repeat bg-cover bg-right md:bg-center relative"
       style={{ backgroundImage: `url(${image.src})` }}
     >
       <div className="pt-10 md:pt-32">

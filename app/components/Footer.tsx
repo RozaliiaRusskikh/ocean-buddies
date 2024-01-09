@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
       <svg
-        viewBox="0 0 1280 392"
+        viewBox="0 0 1280 192"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className="w-full"
