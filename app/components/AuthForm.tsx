@@ -68,13 +68,6 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
                 errors={errors}
                 disabled={isLoading}
               />
-              <Input
-                id="zipcode"
-                label="ZIP Code"
-                register={register}
-                errors={errors}
-                disabled={isLoading}
-              />
               <Select
                 options={levels}
                 label="Experience"
@@ -85,6 +78,13 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
                 label="Certification"
                 disabled={isLoading}
                 isMulti
+              />
+              <Input
+                id="zipcode"
+                label="ZIP Code"
+                register={register}
+                errors={errors}
+                disabled={isLoading}
               />
             </>
           )}
