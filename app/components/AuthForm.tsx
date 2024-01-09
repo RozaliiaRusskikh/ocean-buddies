@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 import { FieldValues, SubmitErrorHandler, useForm } from "react-hook-form";
 import Input from "./Input";
@@ -11,6 +12,14 @@ interface AuthFormProps {
 
 const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
   const [isLoading, setIsLoading] = useState(false);
+
+  const levels = [
+    { value: "novice", label: "Novice (1-20 dives)" },
+    { value: "intermediate", label: "Intermediate (21 - 50 dives)" },
+    { value: "experienced", label: "Experienced (51 - 100 dives)" },
+    { value: "advanced", label: "Advanced (101 - 200 dives)" },
+    { value: "master", label: "Master (more than 200 dives)" },
+  ];
 
   const {
     register,
@@ -28,13 +37,14 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
     setIsLoading(true);
 
     if (variant === "REGISTER") {
-      //Axios Register
+      // Axios Register
     }
 
     if (variant === "LOGIN") {
-      //NextAuth SignIn
+      // NextAuth SignIn
     }
   };
+
   return (
     <div className="mt-8 sm:mx-auto px-4 w-full sm:max-w-lg">
       <div className="bg-background px-4 py-8 shadow sm:rounded-lg sm:px-10">
@@ -55,12 +65,16 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
                 errors={errors}
                 disabled={isLoading}
               />
-              <Select label="Experience" />
+              <Select
+                options={levels}
+                label="Experience"
+                disabled={isLoading}
+              />
             </>
           )}
           <Input
             id="email"
-            label="Email address"
+            label="Email Address"
             type="email"
             register={register}
             errors={errors}

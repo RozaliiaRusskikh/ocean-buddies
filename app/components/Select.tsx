@@ -1,12 +1,13 @@
 "use client";
-import ReactSelect from "react-select";
+import dynamic from "next/dynamic";
+const ReactSelect = dynamic(() => import("react-select"), { ssr: false });
 
 interface SelectProps {
   disabled?: boolean;
   label: string;
-  onChange: () => void;
-  options: string[];
-  value: string;
+  onChange?: () => void;
+  options: Record<string, any>[];
+  value?: Record<string, any>;
 }
 
 const Select: React.FC<SelectProps> = ({
@@ -21,13 +22,14 @@ const Select: React.FC<SelectProps> = ({
       <label className="block text-sm font-medium leading-6 text-gray-900">
         {label}
       </label>
-      <div className="mt-2"></div>
-      <ReactSelect
-        value={value}
-        options={options}
-        onChange={onChange}
-        isDisabled={disabled}
-      />
+      <div className="mt-2">
+        <ReactSelect
+          value={value}
+          options={options}
+          onChange={onChange}
+          isDisabled={disabled}
+        />
+      </div>
     </div>
   );
 };
