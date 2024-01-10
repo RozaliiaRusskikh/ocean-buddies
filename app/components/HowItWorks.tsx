@@ -4,12 +4,14 @@ import underwater from "@/public/assets/underwater.jpeg";
 import { Text, Heading } from "./Text";
 import { rajdhani } from "../fonts";
 import { LayoutX } from "./LayoutX";
+import Link from "next/link";
 import "@/styles/step.css";
 
 interface StepProps {
   step: {
     title: string;
     description: string;
+    link: string;
   };
   index: number;
 }
@@ -20,21 +22,19 @@ const HowItWorks: React.FC = () => {
       title: "Register",
       description:
         "Begin your journey by creating an account and joining our vibrant community",
+      link: "/register",
     },
     {
       title: "Search",
       description:
         "Explore the diverse dive community by searching for a buddy using various criteria",
+      link: "/search",
     },
     {
       title: "Connect",
       description:
-        "Initiate contact with your newfound dive partner through our integrated messaging feature",
-    },
-    {
-      title: "Explore",
-      description:
-        "Embark on exciting underwater adventures as you meet and dive together",
+        "Contact your newfound buddy through our integrated messaging feature and dive together",
+      link: "/messenger",
     },
   ];
   return (
@@ -56,7 +56,7 @@ const HowItWorks: React.FC = () => {
         >
           How It Works
         </Heading>
-        <div className="flex flex-col md:flex-row items-center justify-center gap-5 flex-wrap pb-10">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-12 flex-wrap pb-20">
           {steps.map((step, index) => {
             return <Step key={index} index={index} step={step} />;
           })}
@@ -66,22 +66,27 @@ const HowItWorks: React.FC = () => {
   );
 };
 
-//add links to appropriate pages
 const Step: React.FC<StepProps> = ({ step, index }) => {
   return (
-    <article className="drop max-w-[350px] max-h-[350px] relative flex flex-col justify-center items-center flex-wrap animate-fadein p-5">
-      <div className="content flex justify-center items-center flex-col text-center">
-        <Text size="super" as="p">
-          {index + 1}
-        </Text>
-        <Text size="super" as="h2" className="text-background uppercase">
-          {step.title}
-        </Text>
-        <Text size="nav" as="h2" className="text-background">
-          {step.description}
-        </Text>
-      </div>
-    </article>
+    <Link href={step.link} className="group">
+      <article className="drop max-w-[350px] max-h-[350px] relative flex flex-col justify-center items-center flex-wrap animate-fadein p-5 transition-transform duration-300 ease-in-out group-hover:-translate-y-5">
+        <div className="content flex justify-center items-center flex-col text-center">
+          <Text
+            size="super"
+            as="p"
+            className="transition-all duration-300 ease-in-out group-hover:scale-50"
+          >
+            {index + 1}
+          </Text>
+          <Text size="super" as="h2" className="text-background uppercase">
+            {step.title}
+          </Text>
+          <Text size="nav" as="h2" className="text-background">
+            {step.description}
+          </Text>
+        </div>
+      </article>
+    </Link>
   );
 };
 export default HowItWorks;

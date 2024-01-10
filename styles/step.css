@@ -1,5 +1,5 @@
 .drop {
-  border-radius: 67% 33% 28% 72% / 59% 52% 48% 41%;
+  border-radius: 50%;
   box-shadow: inset 20px 20px 20px rgba(0, 0, 0, 0.05),
     25px 35px 20px rgba(0, 0, 0, 0.05), 25px 20px 20px rgba(0, 0, 0, 0.05),
     inset 25px 30px 30px rgba(255, 255, 255, 0.9);
@@ -33,6 +33,7 @@
 }
 .drop .content p {
   color: #129dc0;
+  font-size: xx-large;
   margin-bottom: 15px;
   position: relative;
   width: 60px;
