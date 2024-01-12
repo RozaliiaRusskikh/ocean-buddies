@@ -39,7 +39,7 @@ const HowItWorks: React.FC = () => {
   ];
   return (
     <section
-      className="min-h-full relative bg-cover bg-no-repeat bg-center bg-fixed"
+      className="min-h-full relative bg-cover bg-no-repeat bg-center md:bg-fixed"
       style={{ backgroundImage: `url(${underwater.src})` }}
     >
       <Image
@@ -51,7 +51,7 @@ const HowItWorks: React.FC = () => {
       <LayoutX>
         <Heading
           size="subheading"
-          className={` text-secondary drop-shadow-md py-10  ${rajdhani.className} antialiased`}
+          className={`text-primary md:text-secondary drop-shadow-md py-10  ${rajdhani.className} antialiased`}
           data-aos="fade-in"
         >
           How It Works
@@ -78,10 +78,10 @@ const Step: React.FC<StepProps> = ({ step, index }) => {
           >
             {index + 1}
           </Text>
-          <Text size="super" as="h2" className="text-background uppercase">
+          <Text size="super" as="h2" className="md:text-background uppercase">
             {step.title}
           </Text>
-          <Text size="nav" as="h2" className="text-background">
+          <Text size="nav" as="h2" className=" md:text-background">
             {step.description}
           </Text>
         </div>

@@ -4,7 +4,10 @@ import "@/styles/globals.css";
 import { nunito_sans } from "./fonts";
 
 export const metadata: Metadata = {
-  title: "Ocean Buddies | Find Divers",
+  title: {
+    template: "Ocean Buddies | %s",
+    default: "Ocean Buddies | Find Divers",
+  },
   description:
     "Find Dive Buddies near your location, search for divers around the world",
   keywords: ["Dive", "Buddies", "PADI", "Search", "Find", "Divers"],

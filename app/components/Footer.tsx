@@ -25,6 +25,9 @@ const Footer: React.FC = () => {
             Buddies
           </Text>
           <Text size="body" className="block md:mt-1">
+            rrrusskikh@gmail.com
+          </Text>
+          <Text size="body" className="block md:mt-1">
             All Rights Reserved.
           </Text>
         </div>
