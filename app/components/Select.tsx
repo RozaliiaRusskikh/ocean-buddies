@@ -31,6 +31,9 @@ const Select: React.FC<SelectProps> = ({
           onChange={onChange}
           isDisabled={disabled}
           isMulti={isMulti}
+          classNames={{
+            control: () => "text-sm",
+          }}
         />
       </div>
     </div>

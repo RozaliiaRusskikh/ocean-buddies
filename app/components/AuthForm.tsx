@@ -23,13 +23,13 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
   ];
 
   const certifications = [
-    { value: "wreck", label: "Wreck Diver" },
     { value: "openWater", label: "Open Water Diver" },
     { value: "advancedOpenWater", label: "Advanced Open Water Diver" },
-    { value: "rescue", label: "Rescue Diver" },
-    { value: "master", label: "Dive Master" },
-    { value: "nitrox", label: "Enriched Air Nitrox" },
     { value: "instructor", label: "Instructor" },
+    { value: "nitrox", label: "Enriched Air Nitrox" },
+    { value: "master", label: "Dive Master" },
+    { value: "rescue", label: "Rescue Diver" },
+    { value: "wreck", label: "Wreck Diver" },
   ];
 
   const {
@@ -42,14 +42,17 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
       email: "",
       password: "",
       zipcode: "",
+      certification: "",
+      experience: "",
     },
   });
 
   const onSubmit: SubmitErrorHandler<FieldValues> = (data) => {
+    console.log(data);
     setIsLoading(true);
 
     if (variant === "REGISTER") {
-      axios;
+      axios.post("/api/register", data);
     }
 
     if (variant === "LOGIN") {
