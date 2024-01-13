@@ -26,7 +26,6 @@ const Select: React.FC<SelectProps> = ({
       </label>
       <div className="mt-2">
         <ReactSelect
-          placeholder=""
           value={value}
           options={options}
           onChange={onChange}
