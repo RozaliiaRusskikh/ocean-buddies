@@ -14,22 +14,22 @@ interface AuthFormProps {
 const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
   const [isLoading, setIsLoading] = useState(false);
 
-  const levels = [
-    { value: "novice", label: "Novice (1-20 dives)" },
-    { value: "intermediate", label: "Intermediate (21 - 50 dives)" },
-    { value: "experienced", label: "Experienced (51 - 100 dives)" },
-    { value: "advanced", label: "Advanced (101 - 200 dives)" },
-    { value: "master", label: "Master (more than 200 dives)" },
+  const experienceOptions = [
+    { value: "Novice", label: "Novice (1-20 dives)" },
+    { value: "Intermediate", label: "Intermediate (21 - 50 dives)" },
+    { value: "Experienced", label: "Experienced (51 - 100 dives)" },
+    { value: "Advanced", label: "Advanced (101 - 200 dives)" },
+    { value: "Master", label: "Master (more than 200 dives)" },
   ];
 
-  const certifications = [
-    { value: "openWater", label: "Open Water Diver" },
-    { value: "advancedOpenWater", label: "Advanced Open Water Diver" },
-    { value: "instructor", label: "Instructor" },
-    { value: "nitrox", label: "Enriched Air Nitrox" },
-    { value: "master", label: "Dive Master" },
-    { value: "rescue", label: "Rescue Diver" },
-    { value: "wreck", label: "Wreck Diver" },
+  const certificationOptions = [
+    { value: "Open Water Diver", label: "Open Water Diver" },
+    { value: "Advanced Open Water", label: "Advanced Open Water Diver" },
+    { value: "Instructor", label: "Instructor" },
+    { value: "Enriched Air Nitrox", label: "Enriched Air Nitrox" },
+    { value: "Dive Master", label: "Dive Master" },
+    { value: "Rescue Diver", label: "Rescue Diver" },
+    { value: "Wreck Diver", label: "Wreck Diver" },
   ];
 
   const {
@@ -42,8 +42,6 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
       email: "",
       password: "",
       zipcode: "",
-      certification: "",
-      experience: "",
     },
   });
 
@@ -74,15 +72,18 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
                 disabled={isLoading}
               />
               <Select
-                options={levels}
+                name="experience"
+                options={experienceOptions}
                 label="Experience"
                 disabled={isLoading}
+                register={register}
               />
               <Select
-                options={certifications}
+                name="cerifications"
+                options={certificationOptions}
                 label="Certification"
                 disabled={isLoading}
-                isMulti
+                register={register}
               />
               <Input
                 id="zipcode"

@@ -53,7 +53,6 @@ const Input: React.FC<InputProps> = ({
           placeholder:text-gray-400
           focus:ring-2
           focus:ring-inset
-          focus:ring-sky-500
           sm:text-sm
           sm:leading-6`,
 

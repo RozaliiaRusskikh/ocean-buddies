@@ -1,23 +1,26 @@
 "use client";
-import dynamic from "next/dynamic";
-const ReactSelect = dynamic(() => import("react-select"), { ssr: false });
+
+import { UseFormRegister, FieldValues } from "react-hook-form";
+
+interface Option {
+  label: string;
+  value: string;
+}
 
 interface SelectProps {
-  disabled?: boolean;
+  name: string;
+  options: Option[];
+  register: UseFormRegister<FieldValues>;
   label: string;
-  onChange?: () => void;
-  options: Record<string, any>[];
-  value?: Record<string, any>;
-  isMulti?: boolean;
+  disabled?: boolean;
 }
 
 const Select: React.FC<SelectProps> = ({
-  label,
-  isMulti = false,
-  disabled,
-  onChange,
+  name,
   options,
-  value,
+  register,
+  label,
+  disabled,
 }) => {
   return (
     <div>
@@ -25,18 +28,16 @@ const Select: React.FC<SelectProps> = ({
         {label}
       </label>
       <div className="mt-2">
-        <ReactSelect
-          value={value}
-          options={options}
-          onChange={onChange}
-          isDisabled={disabled}
-          isMulti={isMulti}
-          classNames={{
-            control: () => "text-sm",
-          }}
-        />
+        <select {...register(name)} disabled={disabled}>
+          {options.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
+        </select>
       </div>
     </div>
   );
 };
+
 export default Select;
