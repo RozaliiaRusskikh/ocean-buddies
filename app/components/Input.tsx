@@ -31,6 +31,7 @@ const Input: React.FC<InputProps> = ({
       </label>
       <div className="mt-2">
         <input
+          placeholder={`Input your ${id}...`}
           id={id}
           type={type}
           autoComplete={id}

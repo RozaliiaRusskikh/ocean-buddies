@@ -5,6 +5,7 @@ import { FieldValues, SubmitErrorHandler, useForm } from "react-hook-form";
 import Input from "./Input";
 import { Button } from "./Button";
 import Select from "./Select";
+import axios from "axios";
 
 interface AuthFormProps {
   variant: string;
@@ -48,7 +49,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
     setIsLoading(true);
 
     if (variant === "REGISTER") {
-      // Axios Register
+      axios;
     }
 
     if (variant === "LOGIN") {
