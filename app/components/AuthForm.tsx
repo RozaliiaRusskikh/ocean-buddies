@@ -47,8 +47,6 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
       email: "",
       password: "",
       zipcode: "",
-      experince: "",
-      certification: [],
     },
   });
 
@@ -89,14 +87,6 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
                 disabled={isLoading}
                 register={register}
               />
-              {/* <Select
-                name="cerification"
-                options={certificationOptions}
-                label="Certification"
-                disabled={isLoading}
-                register={register}
-                multi
-              /> */}
               <MultiSelect
                 control={control}
                 options={certificationOptions}

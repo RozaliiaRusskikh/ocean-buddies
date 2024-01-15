@@ -1,11 +1,7 @@
 import { useController } from "react-hook-form";
-import type { Control, DefaultValues } from "react-hook-form";
+import type { Control, DefaultValues, FieldValues } from "react-hook-form";
 
-interface FormValues {
-  values: string[];
-}
-
-const defaultValues: DefaultValues<FormValues> = {
+const defaultValues: DefaultValues<FieldValues> = {
   values: [],
 };
 
@@ -22,7 +18,7 @@ interface Option {
 }
 
 interface MultiSelectProps {
-  control: Control<FormValues>;
+  control: Control<FieldValues>;
   options: Option[];
   label: string;
   disabled: boolean;
@@ -74,9 +70,7 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
           }
         `}
       >
-        <option value="" disabled>
-          Choose values
-        </option>
+        <option>Choose options...</option>
         {options
           .filter((option) => !selectedValues.includes(option.label))
           .map((option, index) => (
@@ -85,10 +79,10 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
             </option>
           ))}
       </select>
-      <p className="mt-2 text-sm text-red-500">{fieldState.error?.message}</p>
-      <ul className="mt-2">
+      <p className="mt-2 text-xs text-rose-500">{fieldState.error?.message}</p>
+      <ul className="mt-1 text-sm">
         {selectedValues.map((value, index) => (
-          <li key={value} className="mb-2">
+          <li key={value} className="mb-1">
             {value}
             <button
               style={{ marginLeft: 8 }}
@@ -98,7 +92,7 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
                 updatedValues.splice(index, 1);
                 field.onChange(updatedValues);
               }}
-              className="ml-2 px-2 py-1 text-sm font-medium text-white bg-red-500 rounded-md focus:outline-none focus:ring focus:border-blue-300"
+              className="ml-2 text-sm text-rose-500 hover:underline transition-all"
             >
               Remove
             </button>
