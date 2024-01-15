@@ -17,7 +17,6 @@ const Homepage: React.FC = () => {
         image={image}
         buttonLabel="Join"
         link="/register"
-        data-aos="fade-in"
       />
       <HowItWorks />
     </>
