@@ -45,6 +45,8 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
       email: "",
       password: "",
       zipcode: "",
+      experince: "",
+      certification: [],
     },
   });
 
