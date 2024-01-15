@@ -113,16 +113,20 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
             <Input
               id="password"
               label="Password"
-              type="password"
+              type={isRevealPassword ? "text" : "password"}
               register={register}
               errors={errors}
               disabled={isLoading}
             />
             <span
               onClick={togglePassword}
-              className="absolute right-3 bottom-3"
+              className="absolute right-3 bottom-3 cursor-pointer"
             >
-              {isRevealPassword ? <FaRegEye /> : <FaRegEyeSlash />}
+              {isRevealPassword ? (
+                <FaRegEye className="text-secondary" />
+              ) : (
+                <FaRegEyeSlash className="text-rose-500" />
+              )}
             </span>
           </div>
           <div className="flex flex-col items-center">
