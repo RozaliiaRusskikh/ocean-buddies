@@ -79,7 +79,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
                 register={register}
               />
               <Select
-                name="cerifications"
+                name="cerification"
                 options={certificationOptions}
                 label="Certification"
                 disabled={isLoading}
