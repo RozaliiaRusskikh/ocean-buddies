@@ -8,6 +8,7 @@ import Select from "./Select";
 import axios from "axios";
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
+import MultiSelect from "./MultiSelect";
 
 interface AuthFormProps {
   variant: string;
@@ -38,6 +39,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
   const {
     register,
     handleSubmit,
+    control,
     formState: { errors },
   } = useForm<FieldValues>({
     defaultValues: {
@@ -87,13 +89,19 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
                 disabled={isLoading}
                 register={register}
               />
-              <Select
+              {/* <Select
                 name="cerification"
                 options={certificationOptions}
                 label="Certification"
                 disabled={isLoading}
                 register={register}
                 multi
+              /> */}
+              <MultiSelect
+                control={control}
+                options={certificationOptions}
+                label="Certification"
+                disabled={isLoading}
               />
               <Input
                 id="zipcode"

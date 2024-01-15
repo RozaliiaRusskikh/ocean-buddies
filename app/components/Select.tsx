@@ -10,7 +10,7 @@ interface SelectProps {
   options: Option[];
   register: UseFormRegister<FieldValues>;
   label: string;
-  disabled?: boolean;
+  disabled: boolean;
   multi?: boolean;
 }
 
@@ -39,7 +39,6 @@ const Select: React.FC<SelectProps> = ({
             rounded-md
             border-0
             py-1.5
-            text-gray-900
             shadow-sm
             ring-1
             ring-inset
