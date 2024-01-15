@@ -6,6 +6,8 @@ import Input from "./Input";
 import { Button } from "./Button";
 import Select from "./Select";
 import axios from "axios";
+import { FaRegEye } from "react-icons/fa";
+import { FaRegEyeSlash } from "react-icons/fa";
 
 interface AuthFormProps {
   variant: string;
@@ -13,6 +15,7 @@ interface AuthFormProps {
 
 const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
   const [isLoading, setIsLoading] = useState(false);
+  const [isRevealPassword, setIsRevealPassword] = useState(false);
 
   const experienceOptions = [
     { value: "Novice", label: "Novice (1-20 dives)" },
@@ -44,6 +47,10 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
       zipcode: "",
     },
   });
+
+  const togglePassword = () => {
+    setIsRevealPassword((prev) => !prev);
+  };
 
   const onSubmit: SubmitErrorHandler<FieldValues> = (data) => {
     console.log(data);
@@ -102,14 +109,22 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
             errors={errors}
             disabled={isLoading}
           />
-          <Input
-            id="password"
-            label="Password"
-            type="password"
-            register={register}
-            errors={errors}
-            disabled={isLoading}
-          />
+          <div className="relative">
+            <Input
+              id="password"
+              label="Password"
+              type="password"
+              register={register}
+              errors={errors}
+              disabled={isLoading}
+            />
+            <span
+              onClick={togglePassword}
+              className="absolute right-3 bottom-3"
+            >
+              {isRevealPassword ? <FaRegEye /> : <FaRegEyeSlash />}
+            </span>
+          </div>
           <div className="flex flex-col items-center">
             <Button type="submit" disabled={isLoading} color="light">
               {variant}
