@@ -1,13 +1,4 @@
-import React from "react";
-import {
-  UseFormRegister,
-  FieldValues,
-  useController,
-  useForm,
-  Control,
-  SubmitHandler,
-  DefaultValues,
-} from "react-hook-form";
+import { UseFormRegister, FieldValues } from "react-hook-form";
 
 interface Option {
   label: string;
