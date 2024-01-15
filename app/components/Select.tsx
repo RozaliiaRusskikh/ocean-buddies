@@ -12,6 +12,7 @@ interface SelectProps {
   register: UseFormRegister<FieldValues>;
   label: string;
   disabled?: boolean;
+  multi?: boolean;
 }
 
 const Select: React.FC<SelectProps> = ({
@@ -20,6 +21,7 @@ const Select: React.FC<SelectProps> = ({
   register,
   label,
   disabled,
+  multi,
 }) => {
   return (
     <div>
@@ -30,6 +32,7 @@ const Select: React.FC<SelectProps> = ({
         <select
           {...register(name)}
           disabled={disabled}
+          multiple={multi}
           className={`
             form-select
             block

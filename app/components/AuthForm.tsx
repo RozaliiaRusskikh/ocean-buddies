@@ -91,6 +91,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
                 label="Certification"
                 disabled={isLoading}
                 register={register}
+                multi
               />
               <Input
                 id="zipcode"
