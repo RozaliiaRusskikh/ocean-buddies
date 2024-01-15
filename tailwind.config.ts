@@ -24,7 +24,7 @@ const config: Config = {
         },
       },
       animation: {
-        fadein: "fadein 0.9s linear",
+        fadein: "fadein 0.7s",
       },
     },
   },

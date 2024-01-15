@@ -1,3 +1,5 @@
+"use client";
+
 import rocks from "@/public/assets/rocks.png";
 import Image from "next/image";
 import underwater from "@/public/assets/underwater.jpeg";
@@ -6,6 +8,9 @@ import { rajdhani } from "../fonts";
 import { LayoutX } from "./LayoutX";
 import Link from "next/link";
 import "@/styles/step.css";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 interface StepProps {
   step: {
@@ -17,6 +22,10 @@ interface StepProps {
 }
 
 const HowItWorks: React.FC = () => {
+  useEffect(() => {
+    AOS.init({ duration: 400, easing: "ease-in", once: true, delay: 25 });
+  }, []);
+
   const steps = [
     {
       title: "Register",
@@ -46,7 +55,7 @@ const HowItWorks: React.FC = () => {
         src={rocks}
         alt="rocks"
         priority={true}
-        className="absolute left-[5%] bottom-[90%]"
+        className="absolute left-[5%] bottom-[87%] animate-fadein"
       />
       <LayoutX>
         <Heading
@@ -56,7 +65,12 @@ const HowItWorks: React.FC = () => {
         >
           How It Works
         </Heading>
-        <div className="flex flex-col md:flex-row items-center justify-center gap-12 flex-wrap pb-20">
+        <div
+          data-aos="fade-up"
+          data-aos-delay="0"
+          data-aos-duration="700"
+          className="flex flex-col md:flex-row items-center justify-center gap-12 flex-wrap pb-20"
+        >
           {steps.map((step, index) => {
             return <Step key={index} index={index} step={step} />;
           })}
@@ -69,7 +83,7 @@ const HowItWorks: React.FC = () => {
 const Step: React.FC<StepProps> = ({ step, index }) => {
   return (
     <Link href={step.link} className="group">
-      <article className="drop max-w-[350px] max-h-[350px] relative flex flex-col justify-center items-center flex-wrap animate-fadein p-5 transition-transform duration-300 ease-in-out group-hover:-translate-y-5">
+      <article className="drop max-w-[350px] max-h-[350px] relative flex flex-col justify-center items-center flex-wrap p-5 transition-transform duration-300 ease-in-out group-hover:-translate-y-5">
         <div className="content flex justify-center items-center flex-col text-center">
           <Text
             size="super"
