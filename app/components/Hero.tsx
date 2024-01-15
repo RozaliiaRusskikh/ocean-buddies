@@ -61,7 +61,13 @@ export const Hero: React.FC<HeroProps> = ({
         >
           {description}
         </Text>
-        <Button type="button" link={link} color="dark">
+        <Button
+          type="button"
+          link={link}
+          color="dark"
+          className="z-10"
+          data-aos="fade-in"
+        >
           {buttonLabel}
         </Button>
       </div>

@@ -46,7 +46,7 @@ const HowItWorks: React.FC = () => {
         src={rocks}
         alt="rocks"
         priority={true}
-        className="absolute bottom-[90%]"
+        className="absolute left-[5%] bottom-[90%]"
       />
       <LayoutX>
         <Heading
