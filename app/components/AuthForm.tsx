@@ -72,7 +72,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
       <div className="bg-background px-4 py-8 shadow sm:rounded-lg sm:px-10">
         <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
           {variant === "REGISTER" && (
-            <>
+            <fieldset>
               <Input
                 id="name"
                 label="Name"
@@ -102,7 +102,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
                 errors={errors}
                 disabled={isLoading}
               />
-            </>
+            </fieldset>
           )}
           <Input
             id="email"
