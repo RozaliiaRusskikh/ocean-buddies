@@ -1,9 +1,5 @@
 import { useController } from "react-hook-form";
-import type { Control, DefaultValues, FieldValues } from "react-hook-form";
-
-const defaultValues: DefaultValues<FieldValues> = {
-  values: [],
-};
+import type { Control, FieldValues } from "react-hook-form";
 
 const validateValues = (value: string[]) => {
   if (!value.length) {
@@ -32,7 +28,7 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
 }) => {
   const { field, fieldState } = useController({
     control,
-    name: "values",
+    name: "certification",
     rules: {
       validate: validateValues,
     },
@@ -41,10 +37,8 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
   const selectedValues = Array.isArray(field.value) ? field.value : [];
 
   return (
-    <fieldset className="mt-4">
-      <legend className="block text-sm font-medium leading-6 text-gray-700">
-        {label}
-      </legend>
+    <fieldset>
+      <legend className="block text-sm leading-6 text-gray-900">{label}</legend>
       <select
         disabled={disabled}
         onChange={(event) =>
@@ -81,7 +75,7 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
       <p className="mt-2 text-xs text-rose-500">{fieldState.error?.message}</p>
       <ul className="mt-1 text-sm">
         {selectedValues.map((value, index) => (
-          <li key={value} className="mb-1">
+          <li key={index} className="mb-1">
             {value}
             <button
               style={{ marginLeft: 8 }}
