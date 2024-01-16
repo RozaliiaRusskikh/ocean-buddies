@@ -9,6 +9,7 @@ import axios from "axios";
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
 import MultiSelect from "./MultiSelect";
+import { toast } from "react-hot-toast";
 
 interface AuthFormProps {
   variant: string;
@@ -55,11 +56,12 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
   };
 
   const onSubmit: SubmitErrorHandler<FieldValues> = (data) => {
-    console.log(data);
     setIsLoading(true);
 
     if (variant === "REGISTER") {
-      axios.post("/api/register", data);
+      axios.post("/api/register", data).catch(() => {
+        toast.error("Something went wrong");
+      });
     }
 
     if (variant === "LOGIN") {
