@@ -55,9 +55,29 @@ const HowItWorks: React.FC = () => {
         src={rocks}
         alt="rocks"
         priority={true}
-        className="absolute left-[5%] bottom-[87%] animate-fadein"
+        className="absolute left-[5%] bottom-[95%] md:bottom-[87%] animate-fadein"
       />
       <LayoutX>
+        <div
+          className="text-primary md:text-background md:max-w-[70%] text-center md:text-left md:mx-auto pt-20 md:pt-52 lg:pt-36 pb-14"
+          data-aos="fade-in"
+        >
+          <Text size="super" as="p" className="pb-7">
+            Introducing{" "}
+            <span className="text-secondary font-extrabold text-2xl">
+              Ocean Buddies
+            </span>
+            , a groundbreaking platform designed to seamlessly connect diving
+            enthusiasts, making the process of finding dive buddies and planning
+            ocean explorations easier than ever before.
+          </Text>
+          <Text size="super" as="p">
+            It is not just about finding dive partners; it's about creating a
+            supportive community that fosters a love for scuba diving, making it
+            easy for users to connect with like-minded individuals and embark on
+            underwater adventures with confidence.
+          </Text>
+        </div>
         <Heading
           size="subheading"
           className={`text-primary md:text-secondary drop-shadow-md py-10  ${rajdhani.className} antialiased`}
@@ -75,28 +95,6 @@ const HowItWorks: React.FC = () => {
             return <Step key={index} index={index} step={step} />;
           })}
         </div>
-        <Text
-          size="super"
-          as="p"
-          className="text-background md:max-w-[70%] text-center md:mx-auto"
-          data-aos="fade-in"
-        >
-          Introducing <span className="text-secondary">Ocean Buddies</span> , a
-          groundbreaking platform designed to seamlessly connect diving
-          enthusiasts, making the process of finding dive buddies and planning
-          ocean explorations easier than ever before.
-        </Text>
-        <Text
-          size="super"
-          as="p"
-          className="text-background md:max-w-[70%] text-center pb-20 md:mx-auto"
-          data-aos="fade-in"
-        >
-          It is not just about finding dive partners; it's about creating a
-          supportive community that fosters a love for scuba diving, making it
-          easy for users to connect with like-minded individuals and embark on
-          underwater adventures with confidence.
-        </Text>
       </LayoutX>
     </section>
   );
@@ -114,10 +112,10 @@ const Step: React.FC<StepProps> = ({ step, index }) => {
           >
             {index + 1}
           </Text>
-          <Text size="super" as="h2" className="md:text-background uppercase">
+          <Text size="super" as="h2" className="text-background uppercase">
             {step.title}
           </Text>
-          <Text size="nav" as="h2" className=" md:text-background">
+          <Text size="nav" as="h2" className="text-background">
             {step.description}
           </Text>
         </div>
