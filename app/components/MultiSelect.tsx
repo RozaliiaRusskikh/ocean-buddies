@@ -28,13 +28,6 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
     name: "certification",
     rules: {
       required: true,
-      validate: (value) => {
-        console.log(value);
-        if (!value.length) {
-          return "Please select at least one value";
-        }
-        return true;
-      },
     },
   });
 
@@ -67,16 +60,17 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
           }
         `}
       >
-        <option>Choose options...</option>
+        <option disabled selected>
+          Choose options...
+        </option>
         {options
-          .filter((option) => !selectedValues.includes(option.label))
+          .filter((option) => !selectedValues.includes(option.value))
           .map((option, index) => (
             <option key={index} value={option.value}>
               {option.label}
             </option>
           ))}
       </select>
-      <p className="mt-2 text-xs text-rose-500">{fieldState.error?.message}</p>
       <ul className="mt-1 text-sm">
         {selectedValues.map((value, index) => (
           <li key={index} className="mb-1">
