@@ -6,9 +6,9 @@ const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative w-full text-background bg-primary">
+    <footer className="relative w-full text-background bg-primary text-xs md:text-sm">
       <div className="flex items-center justify-center gap-2 absolute bottom-1/3 mb-1 md:bottom-1/4 md:mb-2 left-1/2 translate-x-[-50%]">
-        <div className="text-center">
+        <div className="text-center text-sm">
           &copy; {currentYear}{" "}
           <Text size="body" className="inline">
             Ocean{" "}
