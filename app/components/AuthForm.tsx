@@ -10,6 +10,7 @@ import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
 import MultiSelect from "./MultiSelect";
 import { toast } from "react-hot-toast";
+import { signIn } from "next-auth/react";
 
 interface AuthFormProps {
   variant: string;
@@ -59,13 +60,33 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
     setIsLoading(true);
 
     if (variant === "REGISTER") {
-      axios.post("/api/register", data).catch(() => {
-        toast.error("Something went wrong");
-      });
+      axios
+        .post("/api/register", data)
+        .catch(() => {
+          toast.error("Something went wrong");
+        })
+        .finally(() => {
+          setIsLoading(false);
+        });
     }
 
     if (variant === "LOGIN") {
-      // NextAuth SignIn
+      signIn("credentials", {
+        ...data,
+        redirect: false,
+      })
+        .then((callback) => {
+          if (callback?.error) {
+            toast.error("Invalid credentials!");
+          }
+
+          if (callback?.ok && !callback?.error) {
+            toast.success("You have logged in successfully!");
+          }
+        })
+        .finally(() => {
+          setIsLoading(false);
+        });
     }
   };
 
