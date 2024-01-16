@@ -60,9 +60,7 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
           }
         `}
       >
-        <option disabled selected>
-          Choose options...
-        </option>
+        <option>Choose options...</option>
         {options
           .filter((option) => !selectedValues.includes(option.value))
           .map((option, index) => (

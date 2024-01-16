@@ -56,9 +56,7 @@ const Select: React.FC<SelectProps> = ({
             }
           `}
         >
-          <option disabled selected>
-            Choose options...
-          </option>
+          <option>Choose options...</option>
           {options.map((option, index) => (
             <option key={index} value={option.value}>
               {option.label}
