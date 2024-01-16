@@ -23,7 +23,7 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
   label,
   disabled,
 }) => {
-  const { field, fieldState } = useController({
+  const { field } = useController({
     control,
     name: "certification",
     rules: {
@@ -38,6 +38,7 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
       <legend className="block text-sm leading-6 text-gray-900">{label}</legend>
       <select
         disabled={disabled}
+        value=""
         onChange={(event) =>
           field.onChange([...selectedValues, event.target.value])
         }
@@ -60,7 +61,9 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
           }
         `}
       >
-        <option>Choose options...</option>
+        <option disabled value="">
+          Choose options...
+        </option>
         {options
           .filter((option) => !selectedValues.includes(option.value))
           .map((option, index) => (
