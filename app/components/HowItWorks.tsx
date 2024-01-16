@@ -75,6 +75,28 @@ const HowItWorks: React.FC = () => {
             return <Step key={index} index={index} step={step} />;
           })}
         </div>
+        <Text
+          size="super"
+          as="p"
+          className="text-background md:max-w-[70%] text-center md:mx-auto"
+          data-aos="fade-in"
+        >
+          Introducing <span className="text-secondary">Ocean Buddies</span> , a
+          groundbreaking platform designed to seamlessly connect diving
+          enthusiasts, making the process of finding dive buddies and planning
+          ocean explorations easier than ever before.
+        </Text>
+        <Text
+          size="super"
+          as="p"
+          className="text-background md:max-w-[70%] text-center pb-20 md:mx-auto"
+          data-aos="fade-in"
+        >
+          It is not just about finding dive partners; it's about creating a
+          supportive community that fosters a love for scuba diving, making it
+          easy for users to connect with like-minded individuals and embark on
+          underwater adventures with confidence.
+        </Text>
       </LayoutX>
     </section>
   );
