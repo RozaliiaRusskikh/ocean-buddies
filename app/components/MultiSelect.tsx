@@ -1,12 +1,5 @@
 import { useController } from "react-hook-form";
-import type { Control, FieldValues } from "react-hook-form";
-
-const validateValues = (value: string[]) => {
-  if (!value.length) {
-    return "Please select at least one value";
-  }
-  return true;
-};
+import type { Control, FieldValues, DefaultValues } from "react-hook-form";
 
 interface Option {
   label: string;
@@ -20,6 +13,10 @@ interface MultiSelectProps {
   disabled: boolean;
 }
 
+const defaultValues: DefaultValues<FieldValues> = {
+  certification: [],
+};
+
 const MultiSelect: React.FC<MultiSelectProps> = ({
   control,
   options,
@@ -30,7 +27,14 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
     control,
     name: "certification",
     rules: {
-      validate: validateValues,
+      required: true,
+      validate: (value) => {
+        console.log(value);
+        if (!value.length) {
+          return "Please select at least one value";
+        }
+        return true;
+      },
     },
   });
 

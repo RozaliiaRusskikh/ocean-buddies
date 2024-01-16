@@ -28,7 +28,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
 
   const certificationOptions = [
     { value: "Open Water Diver", label: "Open Water Diver" },
-    { value: "Advanced Open Water", label: "Advanced Open Water Diver" },
+    { value: "Advanced Open Water Diver", label: "Advanced Open Water Diver" },
     { value: "Instructor", label: "Instructor" },
     { value: "Enriched Air Nitrox", label: "Enriched Air Nitrox" },
     { value: "Dive Master", label: "Dive Master" },
