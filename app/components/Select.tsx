@@ -29,6 +29,7 @@ const Select: React.FC<SelectProps> = ({
       </label>
       <div className="mt-2">
         <select
+          value=""
           {...register(name)}
           disabled={disabled}
           multiple={multi}
