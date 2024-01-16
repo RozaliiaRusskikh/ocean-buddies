@@ -50,8 +50,7 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
         onChange={(event) =>
           field.onChange([...selectedValues, event.target.value])
         }
-        className={`
-          mt-2
+        className={`form-select
           pl-2
           block
           py-1.5
