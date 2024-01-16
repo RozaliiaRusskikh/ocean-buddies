@@ -1,5 +1,6 @@
 import { useController } from "react-hook-form";
 import type { Control, FieldValues, DefaultValues } from "react-hook-form";
+import { RxCross1 } from "react-icons/rx";
 
 interface Option {
   label: string;
@@ -72,9 +73,9 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
             </option>
           ))}
       </select>
-      <ul className="mt-1 text-sm">
+      <ul className="my-2 text-sm flex gap-3 flex-wrap">
         {selectedValues.map((value, index) => (
-          <li key={index} className="mb-1">
+          <li key={index} className="flex bg-gray-100 max-w-fit px-1">
             {value}
             <button
               style={{ marginLeft: 8 }}
@@ -86,7 +87,7 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
               }}
               className="ml-2 text-sm text-rose-500 hover:underline transition-all"
             >
-              Remove
+              <RxCross1 className="text-rose-500" />
             </button>
           </li>
         ))}
