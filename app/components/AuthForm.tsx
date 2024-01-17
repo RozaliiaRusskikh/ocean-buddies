@@ -83,7 +83,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
           }
 
           if (callback?.ok && !callback?.error) {
-            toast.success("You have logged in successfully!");
+            toast.success("You have successfully logged in!");
             router.push("/profile");
           }
         })
