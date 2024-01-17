@@ -73,7 +73,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
     if (variant === "LOGIN") {
       signIn("credentials", {
         ...data,
-        redirect: false,
+        callbackUrl: "/profile",
       })
         .then((callback) => {
           if (callback?.error) {
