@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Layout from "@/app/components/Layout";
 import "@/styles/globals.css";
 import { nunito_sans } from "./fonts";
+import ProviderSession from "./context/ProviderSession";
 
 export const metadata: Metadata = {
   title: {
@@ -24,7 +25,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body className={`${nunito_sans.className} antialiased`}>
-        <Layout>{children}</Layout>
+        <ProviderSession>
+          <Layout>{children}</Layout>
+        </ProviderSession>
       </body>
     </html>
   );

@@ -4,6 +4,8 @@ import NavLink from "@/app/components/NavLink";
 import Image from "next/image";
 import logo from "@/public/assets/logo.png";
 import { rajdhani } from "../fonts";
+import { useSession } from "next-auth/react";
+import avatar from "@/public/assets/avatar.png";
 
 interface HeaderProps {
   pathname: string;
@@ -14,6 +16,9 @@ const Header: React.FC<HeaderProps> = ({ pathname }) => {
     { title: "Join", path: "/register" },
     { title: "Login", path: "/login" },
   ];
+
+  const { data: session } = useSession();
+
   return (
     <header
       className={`bg-gradient-to-t from-blue-400 to-blue-100 ${rajdhani.className} antialiased`}
@@ -39,16 +44,30 @@ const Header: React.FC<HeaderProps> = ({ pathname }) => {
             </span>
           </Link>
           <nav className="max-w-[585px] w-full">
-            <ul className="flex justify-end gap-7">
-              {navMenu.map((navLink, i) => (
-                <NavLink
-                  key={i}
-                  title={navLink.title}
-                  path={navLink.path}
-                  pathname={pathname}
-                />
-              ))}
-            </ul>
+            {session?.user ? (
+              <div className="flex justify-end">
+                <Link href="/profile">
+                  <Image
+                    src={avatar}
+                    alt="profile"
+                    width={50}
+                    height={50}
+                    className="transform transition-all hover:scale-110"
+                  />
+                </Link>
+              </div>
+            ) : (
+              <ul className="flex justify-end gap-7">
+                {navMenu.map((navLink, i) => (
+                  <NavLink
+                    key={i}
+                    title={navLink.title}
+                    path={navLink.path}
+                    pathname={pathname}
+                  />
+                ))}
+              </ul>
+            )}
           </nav>
         </div>
       </LayoutX>
