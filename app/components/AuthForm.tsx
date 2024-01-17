@@ -11,6 +11,7 @@ import { FaRegEyeSlash } from "react-icons/fa";
 import MultiSelect from "./MultiSelect";
 import { toast } from "react-hot-toast";
 import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 interface AuthFormProps {
   variant: string;
@@ -52,6 +53,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
     },
   });
 
+  const router = useRouter();
   const togglePassword = () => {
     setIsRevealPassword((prev) => !prev);
   };
@@ -73,7 +75,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
     if (variant === "LOGIN") {
       signIn("credentials", {
         ...data,
-        callbackUrl: "/profile",
+        redirect: false,
       })
         .then((callback) => {
           if (callback?.error) {
@@ -82,6 +84,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
 
           if (callback?.ok && !callback?.error) {
             toast.success("You have logged in successfully!");
+            router.push("/profile");
           }
         })
         .finally(() => {
