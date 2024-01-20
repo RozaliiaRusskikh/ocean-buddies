@@ -58,11 +58,14 @@ const HowItWorks: React.FC = () => {
         className="absolute left-[5%] bottom-[95%] md:bottom-[87%] animate-fadein"
       />
       <LayoutX>
-        <div
-          className="text-primary md:text-background md:max-w-[70%] text-center md:text-left md:mx-auto pt-20 md:pt-52 lg:pt-36 pb-14"
-          data-aos="fade-in"
-        >
-          <Text size="super" as="p" className="pb-7 md:indent-6">
+        <div className="text-primary md:text-background md:max-w-[70%] text-center md:text-left md:mx-auto pt-20 md:pt-52 lg:pt-36 pb-14">
+          <Text
+            size="super"
+            as="p"
+            className="pb-7 md:indent-6"
+            data-aos="fade-right"
+            data-aos-duration="700"
+          >
             Introducing{" "}
             <span className="text-secondary font-extrabold text-2xl">
               Ocean Buddies
@@ -71,7 +74,13 @@ const HowItWorks: React.FC = () => {
             enthusiasts, making the process of finding dive buddies and planning
             ocean explorations easier than ever before.
           </Text>
-          <Text size="super" as="p" className="md:indent-6">
+          <Text
+            size="super"
+            as="p"
+            className="md:indent-6"
+            data-aos="fade-left"
+            data-aos-duration="700"
+          >
             It is not just about finding dive partners; it's about creating a
             supportive community that fosters a love for scuba diving, making it
             easy for users to connect with like-minded individuals and embark on
@@ -82,13 +91,14 @@ const HowItWorks: React.FC = () => {
           size="subheading"
           className={`text-primary md:text-secondary drop-shadow-md py-10  ${rajdhani.className} antialiased`}
           data-aos="fade-in"
+          data-aos-delay="750"
         >
           How It Works
         </Heading>
         <div
           data-aos="fade-up"
-          data-aos-delay="0"
-          data-aos-duration="700"
+          data-aos-duration="900"
+          data-aos-delay="800"
           className="flex flex-col md:flex-row items-center justify-center gap-12 flex-wrap pb-20"
         >
           {steps.map((step, index) => {
