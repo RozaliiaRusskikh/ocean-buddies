@@ -62,7 +62,7 @@ const HowItWorks: React.FC = () => {
           className="text-primary md:text-background md:max-w-[70%] text-center md:text-left md:mx-auto pt-20 md:pt-52 lg:pt-36 pb-14"
           data-aos="fade-in"
         >
-          <Text size="super" as="p" className="pb-7">
+          <Text size="super" as="p" className="pb-7 md:indent-6">
             Introducing{" "}
             <span className="text-secondary font-extrabold text-2xl">
               Ocean Buddies
@@ -71,7 +71,7 @@ const HowItWorks: React.FC = () => {
             enthusiasts, making the process of finding dive buddies and planning
             ocean explorations easier than ever before.
           </Text>
-          <Text size="super" as="p">
+          <Text size="super" as="p" className="md:indent-6">
             It is not just about finding dive partners; it's about creating a
             supportive community that fosters a love for scuba diving, making it
             easy for users to connect with like-minded individuals and embark on
