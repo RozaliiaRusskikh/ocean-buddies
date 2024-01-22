@@ -48,6 +48,8 @@ const Profile = () => {
           src={scubaDivers}
           alt="Scuba Divers"
           className="mx-auto"
+          width={400}
+          height={400}
           priority
         />
       </LayoutX>
