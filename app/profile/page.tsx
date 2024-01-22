@@ -8,6 +8,7 @@ import { LayoutX } from "../components/LayoutX";
 import Link from "next/link";
 import { Button } from "../components/Button";
 import scubaDivers from "@/public/assets/scuba-divers.png";
+import { RxCross1 } from "react-icons/rx";
 
 const Profile = () => {
   const { data: session, status } = useSession();
@@ -34,11 +35,12 @@ const Profile = () => {
   if (status === "unauthenticated") {
     return (
       <LayoutX className="pt-2 flex min-h-screen flex-col justify-center items-center text-center">
-        <Text as="h1" size="super">
+        <Text as="h1" size="super" className="flex flex-col items-center gap-1">
+          <RxCross1 className="text-rose-500" />
           Access Denied.{" "}
           <span className="block">
             Please{" "}
-            <Link className="text-primary" href="login">
+            <Link className="text-primary hover:underline" href="login">
               login
             </Link>{" "}
             to view your profile page.{" "}

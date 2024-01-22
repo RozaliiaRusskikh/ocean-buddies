@@ -41,6 +41,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
 
   const {
     register,
+    reset,
     handleSubmit,
     control,
     formState: { errors },
@@ -64,6 +65,13 @@ const AuthForm: React.FC<AuthFormProps> = ({ variant }) => {
     if (variant === "REGISTER") {
       axios
         .post("/api/register", data)
+        .then((response) => {
+          reset();
+          toast.success(
+            `${response.data.name}, you have been successfully registered! Please login.`
+          );
+          router.push("/login");
+        })
         .catch(() => {
           toast.error("Something went wrong");
         })
