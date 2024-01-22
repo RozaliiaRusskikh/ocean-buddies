@@ -91,14 +91,12 @@ const HowItWorks: React.FC = () => {
           size="subheading"
           className={`text-primary md:text-secondary drop-shadow-md py-10  ${rajdhani.className} antialiased`}
           data-aos="fade-in"
-          data-aos-delay="750"
         >
           How It Works
         </Heading>
         <div
           data-aos="fade-up"
           data-aos-duration="900"
-          data-aos-delay="800"
           className="flex flex-col md:flex-row items-center justify-center gap-12 flex-wrap pb-20"
         >
           {steps.map((step, index) => {

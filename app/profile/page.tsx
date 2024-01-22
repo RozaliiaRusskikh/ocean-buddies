@@ -6,6 +6,8 @@ import { signOut } from "next-auth/react";
 import spinner from "@/public/assets/spinner.svg";
 import { LayoutX } from "../components/LayoutX";
 import Link from "next/link";
+import { Button } from "../components/Button";
+import scubaDivers from "@/public/assets/scuba-divers.png";
 
 const Profile = () => {
   const { data: session, status } = useSession();
@@ -31,7 +33,7 @@ const Profile = () => {
 
   if (status === "unauthenticated") {
     return (
-      <LayoutX className="pt-2">
+      <LayoutX className="pt-2 flex min-h-screen flex-col justify-center items-center text-center">
         <Text as="h1" size="super">
           Access Denied.{" "}
           <span className="block">
@@ -42,24 +44,34 @@ const Profile = () => {
             to view your profile page.{" "}
           </span>
         </Text>
+        <Image
+          src={scubaDivers}
+          alt="Scuba Divers"
+          className="mx-auto"
+          priority
+        />
       </LayoutX>
     );
   }
 
-  const handleSignOut: React.MouseEventHandler<
-    HTMLButtonElement
-  > = async () => {
+  const handleSignOut = async () => {
     await signOut({ callbackUrl: "/" });
   };
 
   return (
-    <div>
+    <LayoutX className="pt-2">
       <Text>{session?.user?.name}</Text>
       <Text>{session?.user?.email}</Text>
-      <button type="button" onClick={handleSignOut}>
+      <Button
+        type="button"
+        onClick={handleSignOut}
+        color="dark"
+        className="z-10"
+        data-aos="fade-in"
+      >
         Sign Out
-      </button>
-    </div>
+      </Button>
+    </LayoutX>
   );
 };
 
