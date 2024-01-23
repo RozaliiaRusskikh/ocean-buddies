@@ -10,7 +10,6 @@ import { Button } from "../components/Button";
 import scubaDivers from "@/public/assets/scuba-divers.png";
 import { RxCross1 } from "react-icons/rx";
 import NavLink from "../components/NavLink";
-import image from "@/public/assets/bottom.jpg";
 
 const Profile = () => {
   const { data: session, status } = useSession();
@@ -69,7 +68,7 @@ const Profile = () => {
     { title: "Messenger", path: "/messenger" },
   ];
   return (
-    <LayoutX className="min-h-screen bg-secondary">
+    <LayoutX className="min-h-screen py-12 bg-gradient-to-b from-blue-400 to-blue-900">
       <div className="flex justify-between">
         <aside>
           <Text>{session?.user?.name}</Text>
