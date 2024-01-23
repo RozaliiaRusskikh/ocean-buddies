@@ -1,7 +1,7 @@
 "use client";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
-import { Text } from "../components/Text";
+import { Heading, Text } from "../components/Text";
 import { signOut } from "next-auth/react";
 import spinner from "@/public/assets/spinner.svg";
 import { LayoutX } from "../components/LayoutX";
@@ -50,8 +50,8 @@ const Profile = () => {
           src={scubaDivers}
           alt="Scuba Divers"
           className="mx-auto"
-          width={400}
-          height={400}
+          width={300}
+          height={300}
           priority
         />
       </LayoutX>
@@ -62,15 +62,13 @@ const Profile = () => {
     await signOut({ callbackUrl: "/" });
   };
 
-  const navMenu = [
-    { title: "Search", path: "/search" },
-    { title: "Messenger", path: "/messenger" },
-  ];
   return (
     <LayoutX className="min-h-screen py-12 bg-gradient-to-b from-blue-400 via-cyan-700 to-blue-950">
-      <div className="flex justify-between">
-        <aside>
-          <Text>{session?.user?.name}</Text>
+      <div className="flex flex-col md:flex-row md:gap-10">
+        <aside className="shrink-0">
+          <Heading as="h1" size="subheading">
+            {session?.user?.name}
+          </Heading>
           <Text>{session?.user?.email}</Text>
           <button
             type="button"
@@ -81,13 +79,9 @@ const Profile = () => {
           </button>
         </aside>
         <div>
-          <nav>
-            <ul className="flex justify-end gap-7">
-              {navMenu.map((navLink, i) => (
-                <NavLink key={i} title={navLink.title} path={navLink.path} />
-              ))}
-            </ul>
-          </nav>
+          <Heading as="h2" size="subheading">
+            Saved Diver Contacts
+          </Heading>
         </div>
       </div>
     </LayoutX>
