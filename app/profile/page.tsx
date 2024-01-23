@@ -68,7 +68,7 @@ const Profile = () => {
     { title: "Messenger", path: "/messenger" },
   ];
   return (
-    <LayoutX className="min-h-screen py-12 bg-gradient-to-b from-blue-400 to-blue-900">
+    <LayoutX className="min-h-screen py-12 bg-gradient-to-b from-blue-400 via-cyan-700 to-blue-950">
       <div className="flex justify-between">
         <aside>
           <Text>{session?.user?.name}</Text>

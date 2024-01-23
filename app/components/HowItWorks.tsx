@@ -55,7 +55,7 @@ const HowItWorks: React.FC = () => {
         src={rocks}
         alt="rocks"
         priority={true}
-        className="absolute left-[5%] bottom-[95%] md:bottom-[87%] animate-fadein"
+        className="absolute md:left-[5%] bottom-[95%] md:bottom-[87%] animate-fadein"
       />
       <LayoutX>
         <div className="text-primary md:text-background md:max-w-[70%] text-center md:text-left md:mx-auto pt-20 md:pt-52 lg:pt-36 pb-14">
@@ -63,7 +63,7 @@ const HowItWorks: React.FC = () => {
             size="super"
             as="p"
             className="pb-7 md:indent-6"
-            data-aos="fade-right"
+            data-aos="fade-up"
             data-aos-duration="700"
           >
             Introducing{" "}
@@ -78,7 +78,7 @@ const HowItWorks: React.FC = () => {
             size="super"
             as="p"
             className="md:indent-6"
-            data-aos="fade-left"
+            data-aos="fade-up"
             data-aos-duration="700"
           >
             It is not just about finding dive partners; it's about creating a
