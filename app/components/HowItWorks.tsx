@@ -36,7 +36,7 @@ const HowItWorks: React.FC = () => {
     {
       title: "Search",
       description:
-        "Explore the diverse dive community by searching for a buddy using various criteria",
+        "Explore the diverse dive community by searching for a buddy using various criteria and save your favorite diving buddies",
       link: "/search",
     },
     {
