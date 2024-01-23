@@ -9,6 +9,8 @@ import Link from "next/link";
 import { Button } from "../components/Button";
 import scubaDivers from "@/public/assets/scuba-divers.png";
 import { RxCross1 } from "react-icons/rx";
+import NavLink from "../components/NavLink";
+import image from "@/public/assets/bottom.jpg";
 
 const Profile = () => {
   const { data: session, status } = useSession();
@@ -62,19 +64,36 @@ const Profile = () => {
     await signOut({ callbackUrl: "/" });
   };
 
+  const navMenu = [
+    { title: "Search", path: "/search" },
+    { title: "Messenger", path: "/messenger" },
+  ];
   return (
-    <LayoutX className="pt-2">
-      <Text>{session?.user?.name}</Text>
-      <Text>{session?.user?.email}</Text>
-      <Button
-        type="button"
-        onClick={handleSignOut}
-        color="dark"
-        className="z-10"
-        data-aos="fade-in"
-      >
-        Sign Out
-      </Button>
+    <LayoutX className="min-h-screen bg-secondary">
+      <div className="flex justify-between">
+        <aside>
+          <Text>{session?.user?.name}</Text>
+          <Text>{session?.user?.email}</Text>
+          <Button
+            type="button"
+            onClick={handleSignOut}
+            color="accent"
+            className="z-10"
+            data-aos="fade-in"
+          >
+            Sign Out
+          </Button>
+        </aside>
+        <div>
+          <nav>
+            <ul className="flex justify-end gap-7">
+              {navMenu.map((navLink, i) => (
+                <NavLink key={i} title={navLink.title} path={navLink.path} />
+              ))}
+            </ul>
+          </nav>
+        </div>
+      </div>
     </LayoutX>
   );
 };

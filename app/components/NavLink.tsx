@@ -4,7 +4,7 @@ import { Text } from "./Text";
 interface NavLinkProps {
   title: string;
   path: string;
-  pathname: string;
+  pathname?: string;
 }
 
 export default function NavLink({ title, path, pathname }: NavLinkProps) {

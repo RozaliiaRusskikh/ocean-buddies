@@ -83,8 +83,8 @@ const HowItWorks: React.FC = () => {
           >
             It is not just about finding dive partners; it's about creating a
             supportive community that fosters a love for scuba diving, making it
-            easy for users to connect with like-minded individuals and embark on
-            underwater adventures with confidence.
+            easy for users to connect with like-minded individuals around the
+            world and embark on underwater adventures with confidence.
           </Text>
         </div>
         <Heading
