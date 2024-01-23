@@ -8,14 +8,16 @@ import { LayoutX } from "../components/LayoutX";
 import Link from "next/link";
 import scubaDivers from "@/public/assets/scuba-divers.png";
 import { RxCross1 } from "react-icons/rx";
-import NavLink from "../components/NavLink";
+import avatar from "@/public/assets/avatar.png";
+import { TbStarFilled } from "react-icons/tb";
+import { SearchCard } from "../components/SearchCard";
 
 const Profile = () => {
   const { data: session, status } = useSession();
 
   if (status === "loading") {
     return (
-      <LayoutX className="pt-10">
+      <LayoutX className="pt-10 min-h-screen">
         <div className="flex gap-3 justify-center">
           <Image
             className="animate-spin"
@@ -62,26 +64,58 @@ const Profile = () => {
     await signOut({ callbackUrl: "/" });
   };
 
+  const handleEdit = () => {
+    console.log("Edit");
+  };
+  //logged in
   return (
     <LayoutX className="min-h-screen py-12 bg-gradient-to-b from-blue-400 via-cyan-700 to-blue-950">
-      <div className="flex flex-col md:flex-row md:gap-10">
-        <aside className="shrink-0">
-          <Heading as="h1" size="subheading">
-            {session?.user?.name}
-          </Heading>
-          <Text>{session?.user?.email}</Text>
-          <button
-            type="button"
-            onClick={handleSignOut}
-            className="hover:underline"
-          >
-            Sign Out
-          </button>
+      <div className="flex flex-col items-center md:items-start md:flex-row md:gap-8">
+        <aside className="shrink-0 md:w-1/4">
+          <div className="flex flex-col items-center">
+            <Image src={avatar} alt="avatar" width={150} height={150} />
+            <Heading as="h1" size="subheading">
+              {session?.user?.name}
+            </Heading>
+            <Text>{session?.user?.email}</Text>
+          </div>
+          <div className="flex gap-3 justify-center text-background">
+            <button
+              type="button"
+              onClick={handleSignOut}
+              className="hover:underline"
+            >
+              Sign Out
+            </button>
+            <button
+              type="button"
+              onClick={handleEdit}
+              className="hover:underline"
+            >
+              Edit
+            </button>
+          </div>
         </aside>
-        <div>
-          <Heading as="h2" size="subheading">
-            Saved Diver Contacts
+        <div className="flex flex-col mt-10 md:mt-0">
+          <Heading
+            as="h2"
+            size="micro"
+            className="self-center md:self-start text-slate-100 flex items-center gap-1"
+          >
+            Saved Divers Contacts
+            <TbStarFilled className="text-amber-500 w-6" />
           </Heading>
+          <div className="flex gap-5 flex-wrap justify-center md:justify-start my-7">
+            <SearchCard />
+            <SearchCard />
+            <SearchCard />
+            <SearchCard />
+            <SearchCard />
+            <SearchCard />
+            <SearchCard />
+            <SearchCard />
+            <SearchCard />
+          </div>
         </div>
       </div>
     </LayoutX>

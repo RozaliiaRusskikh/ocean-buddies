@@ -5,7 +5,7 @@ export const metadata: Metadata = {
 };
 
 const Messenger = () => {
-  return <div>Messenger</div>;
+  return <div className="min-h-screen">Messenger</div>;
 };
 
 export default Messenger;

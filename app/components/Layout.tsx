@@ -15,7 +15,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <>
       <Header pathname={pathname} />
-      <main className="min-h-screen">
+      <main>
         <ToasterContext />
         {children}
       </main>

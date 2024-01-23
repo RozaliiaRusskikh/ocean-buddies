@@ -5,7 +5,7 @@ export const metadata: Metadata = {
 };
 
 const Search = () => {
-  return <div>Search</div>;
+  return <div className="min-h-screen">Search</div>;
 };
 
 export default Search;

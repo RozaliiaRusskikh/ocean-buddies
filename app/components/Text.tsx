@@ -8,7 +8,7 @@ interface TextProps {
 interface HeadingProps {
   as?: React.ElementType;
   className?: string;
-  size?: "heading" | "subheading";
+  size?: "heading" | "subheading" | "micro";
   children?: React.ReactNode;
 }
 
@@ -45,6 +45,7 @@ export function Heading({
   const sizes = {
     heading: "text-3xl md:text-5xl font-bold",
     subheading: "text-lg md:text-3xl font-bold",
+    micro: "text-lg md:text-2xl font-bold",
   };
 
   const styles = `${sizes[size]} ${className}`;
