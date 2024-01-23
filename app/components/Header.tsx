@@ -6,6 +6,8 @@ import logo from "@/public/assets/logo.png";
 import { rajdhani } from "../fonts";
 import { useSession } from "next-auth/react";
 import avatar from "@/public/assets/avatar.png";
+import { signOut } from "next-auth/react";
+import { Button } from "./Button";
 
 interface HeaderProps {
   pathname: string;
@@ -43,19 +45,31 @@ const Header: React.FC<HeaderProps> = ({ pathname }) => {
               Buddies
             </span>
           </Link>
-          <nav className="max-w-[585px] w-full">
+          <nav className="max-w-[585px] w-full flex justify-end">
             {session?.user ? (
-              <div className="flex justify-end">
-                <Link href="/profile">
-                  <Image
-                    src={avatar}
-                    alt="profile"
-                    width={50}
-                    height={50}
-                    className="transform transition-all hover:scale-110"
-                  />
-                </Link>
-              </div>
+              pathname === "/profile" ? (
+                <button
+                  type="button"
+                  className="text-primary text-xl hover:underline"
+                  onClick={async () => {
+                    await signOut({ callbackUrl: "/" });
+                  }}
+                >
+                  Sign Out
+                </button>
+              ) : (
+                <div>
+                  <Link href="/profile">
+                    <Image
+                      src={avatar}
+                      alt="profile"
+                      width={50}
+                      height={50}
+                      className="transform transition-all hover:scale-110"
+                    />
+                  </Link>
+                </div>
+              )
             ) : (
               <ul className="flex justify-end gap-7">
                 {navMenu.map((navLink, i) => (

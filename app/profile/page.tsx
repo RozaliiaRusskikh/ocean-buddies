@@ -6,7 +6,6 @@ import { signOut } from "next-auth/react";
 import spinner from "@/public/assets/spinner.svg";
 import { LayoutX } from "../components/LayoutX";
 import Link from "next/link";
-import { Button } from "../components/Button";
 import scubaDivers from "@/public/assets/scuba-divers.png";
 import { RxCross1 } from "react-icons/rx";
 import NavLink from "../components/NavLink";
@@ -73,15 +72,13 @@ const Profile = () => {
         <aside>
           <Text>{session?.user?.name}</Text>
           <Text>{session?.user?.email}</Text>
-          <Button
+          <button
             type="button"
             onClick={handleSignOut}
-            color="accent"
-            className="z-10"
-            data-aos="fade-in"
+            className="hover:underline"
           >
             Sign Out
-          </Button>
+          </button>
         </aside>
         <div>
           <nav>
