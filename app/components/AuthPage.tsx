@@ -8,13 +8,14 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { rajdhani } from "../fonts";
-import image from "@/public/assets/jellyfish-background.jpg";
+import { StaticImageData } from "next/image";
 
 interface AuthPageProps {
   title: string;
+  image: StaticImageData;
 }
 
-const AuthPage: React.FC<AuthPageProps> = ({ title }) => {
+const AuthPage: React.FC<AuthPageProps> = ({ title, image }) => {
   useEffect(() => {
     AOS.init({ duration: 400, easing: "ease-in", once: true, delay: 25 });
   }, []);

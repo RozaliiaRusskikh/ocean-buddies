@@ -73,7 +73,13 @@ const Profile = () => {
       <div className="flex flex-col items-center md:items-start md:flex-row md:gap-8">
         <aside className="shrink-0 md:w-1/4">
           <div className="flex flex-col items-center">
-            <Image src={avatar} alt="avatar" width={150} height={150} />
+            <Image
+              src={avatar}
+              alt="avatar"
+              width={150}
+              height={150}
+              priority
+            />
             <Heading as="h1" size="subheading">
               {session?.user?.name}
             </Heading>
@@ -106,14 +112,6 @@ const Profile = () => {
             <TbStarFilled className="text-amber-500 w-6" />
           </Heading>
           <div className="flex gap-5 flex-wrap justify-center md:justify-start my-7">
-            <SearchCard />
-            <SearchCard />
-            <SearchCard />
-            <SearchCard />
-            <SearchCard />
-            <SearchCard />
-            <SearchCard />
-            <SearchCard />
             <SearchCard />
           </div>
         </div>
