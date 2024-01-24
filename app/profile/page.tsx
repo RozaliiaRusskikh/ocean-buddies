@@ -11,9 +11,20 @@ import { RxCross1 } from "react-icons/rx";
 import avatar from "@/public/assets/avatar.png";
 import { TbStarFilled } from "react-icons/tb";
 import { SearchCard } from "../components/SearchCard";
+import type { DefaultSession } from "next-auth";
+
+declare module "next-auth" {
+  interface Session {
+    user: DefaultSession["user"] & {
+      id: string;
+    };
+  }
+}
 
 const Profile = () => {
   const { data: session, status } = useSession();
+
+  console.log(session?.user.id);
 
   if (status === "loading") {
     return (
