@@ -28,7 +28,11 @@ model User {
 
   seenMessageIds String[]  @db.ObjectId
   seenMessages   Message[] @relation("Seen", fields: [seenMessageIds], references: [id])
-  messages       Message[]
+
+  messages Message[]
+
+  favoritesOnUser   FavoritesOnUser[] @relation(fields: [favoritesOnUserId], references: [id])
+  favoritesOnUserId String[]          @db.ObjectId
 }
 
 model Conversation {
@@ -43,6 +47,12 @@ model Conversation {
 
   userIds String[] @db.ObjectId
   users   User[]   @relation(fields: [userIds], references: [id])
+}
+
+model FavoritesOnUser {
+  id      String   @id @default(auto()) @map("_id") @db.ObjectId
+  users   User[]   @relation(fields: [userIds], references: [id])
+  userIds String[] @db.ObjectId
 }
 
 model Message {

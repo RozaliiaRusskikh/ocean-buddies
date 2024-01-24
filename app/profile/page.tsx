@@ -70,8 +70,8 @@ const Profile = () => {
   //logged in
   return (
     <LayoutX className="min-h-screen py-12 bg-gradient-to-b from-blue-400 via-cyan-700 to-blue-950">
-      <div className="flex flex-col items-center md:items-start md:flex-row md:gap-8">
-        <aside className="shrink-0 md:w-1/4">
+      <div className="flex flex-col items-center md:items-start md:flex-row md:gap-5">
+        <aside className="shrink-0 md:w-1/4 md:rounded-sm md:h-screen md:shadow-2xl">
           <div className="flex flex-col items-center">
             <Image
               src={avatar}
@@ -102,14 +102,14 @@ const Profile = () => {
             </button>
           </div>
         </aside>
-        <div className="flex flex-col mt-10 md:mt-0">
+        <div className="flex flex-col mt-10 md:mt-0 md:rounded-sm md:h-screen md:w-screen md:shadow-2xl md:px-5 md:pt-1">
           <Heading
             as="h2"
             size="micro"
             className="self-center md:self-start text-slate-100 flex items-center gap-1"
           >
             Saved Divers Contacts
-            <TbStarFilled className="text-amber-500 w-6" />
+            <TbStarFilled className="text-amber-500 w-5" />
           </Heading>
           <div className="flex gap-5 flex-wrap justify-center md:justify-start my-7">
             <SearchCard />
