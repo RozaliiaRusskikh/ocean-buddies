@@ -84,8 +84,15 @@ const Profile = () => {
               {session?.user?.name}
             </Heading>
             <Text>{session?.user?.email}</Text>
+            <Text>Location</Text>
+            <Text>Experience</Text>
+            <ul className="flex flex-col gap-1 mt-2">
+              <li className="flex bg-gray-100 max-w-fit px-1">
+                Cerificate Name
+              </li>
+            </ul>
           </div>
-          <div className="flex gap-3 justify-center text-background">
+          <div className="flex gap-3 justify-center text-background mt-4">
             <button
               type="button"
               onClick={handleSignOut}
@@ -106,7 +113,7 @@ const Profile = () => {
           <Heading
             as="h2"
             size="micro"
-            className="self-center md:self-start text-slate-100 flex items-center gap-1"
+            className="self-center md:self-start text-background flex items-center gap-1"
           >
             Saved Divers Contacts
             <TbStarFilled className="text-amber-500 w-5" />
