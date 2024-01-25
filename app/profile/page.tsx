@@ -12,11 +12,18 @@ import avatar from "@/public/assets/avatar.png";
 import { TbStarFilled } from "react-icons/tb";
 import { SearchCard } from "../components/SearchCard";
 import { useEffect, useState } from "react";
-import { Certificate } from "crypto";
+
+interface User {
+  name: string;
+  email: string;
+  zipcode: string;
+  experience: string;
+  certification: string[];
+}
 
 const Profile = () => {
   const { data: session, status } = useSession();
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -92,7 +99,7 @@ const Profile = () => {
   return (
     <LayoutX className="min-h-screen py-12 bg-gradient-to-b from-blue-400 via-cyan-700 to-blue-950">
       <div className="flex flex-col items-center md:items-start md:flex-row md:gap-5">
-        <aside className="shrink-0 md:w-1/4 md:rounded-sm md:h-screen md:shadow-2xl">
+        <aside className="shrink-0 md:w-1/3 md:rounded-sm md:h-screen md:shadow-2xl">
           <div className="flex flex-col items-center">
             <Image
               src={avatar}
