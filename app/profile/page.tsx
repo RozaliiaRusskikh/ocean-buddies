@@ -11,20 +11,30 @@ import { RxCross1 } from "react-icons/rx";
 import avatar from "@/public/assets/avatar.png";
 import { TbStarFilled } from "react-icons/tb";
 import { SearchCard } from "../components/SearchCard";
-import type { DefaultSession } from "next-auth";
-
-declare module "next-auth" {
-  interface Session {
-    user: DefaultSession["user"] & {
-      id: string;
-    };
-  }
-}
+import { useEffect, useState } from "react";
+import { Certificate } from "crypto";
 
 const Profile = () => {
   const { data: session, status } = useSession();
+  const [user, setUser] = useState(null);
 
-  console.log(session?.user.id);
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const response = await fetch(`/api/user`);
+        if (response.ok) {
+          const user = await response.json();
+          setUser(user);
+        } else {
+          console.error("Failed to fetch user data");
+        }
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+      }
+    };
+
+    fetchUser();
+  }, []);
 
   if (status === "loading") {
     return (
@@ -78,7 +88,7 @@ const Profile = () => {
   const handleEdit = () => {
     console.log("Edit");
   };
-  //logged in
+
   return (
     <LayoutX className="min-h-screen py-12 bg-gradient-to-b from-blue-400 via-cyan-700 to-blue-950">
       <div className="flex flex-col items-center md:items-start md:flex-row md:gap-5">
@@ -92,15 +102,17 @@ const Profile = () => {
               priority
             />
             <Heading as="h1" size="subheading">
-              {session?.user?.name}
+              {user?.name}
             </Heading>
-            <Text>{session?.user?.email}</Text>
-            <Text>Location</Text>
-            <Text>Experience</Text>
+            <Text> {user?.email}</Text>
+            <Text>{user?.zipcode}</Text>
+            <Text>{user?.experience}</Text>
             <ul className="flex flex-col gap-1 mt-2">
-              <li className="flex bg-gray-100 max-w-fit px-1">
-                Cerificate Name
-              </li>
+              {user?.certification.map((certificate, index) => (
+                <li key={index} className="flex bg-gray-100 max-w-fit px-1">
+                  {certificate}
+                </li>
+              ))}
             </ul>
           </div>
           <div className="flex gap-3 justify-center text-background mt-4">
