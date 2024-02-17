@@ -1,7 +1,7 @@
 export const SearchCard = () => {
   return (
-    <article className="max-w-28 max-h-36">
-      <p className=" bg-white rounded-sm">Hello</p>
+    <article className="w-20 h-40 text-center">
+      <p className=" bg-white rounded-sm px-2 py-1">Hello</p>
     </article>
   );
 };

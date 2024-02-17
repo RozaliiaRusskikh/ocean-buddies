@@ -24,6 +24,9 @@ interface User {
 const Profile = () => {
   const { data: session, status } = useSession();
   const [user, setUser] = useState<User | null>(null);
+  const [location, setLocation] = useState(null);
+
+  const zipcodeUrl = `https://app.zipcodebase.com/api/v1/search?apikey=547ef040-cd35-11ee-af73-9b7276b819bd&codes=618202`;
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -41,6 +44,24 @@ const Profile = () => {
     };
 
     fetchUser();
+  }, []);
+
+  useEffect(() => {
+    const fetchLocation = async () => {
+      try {
+        const response = await fetch(zipcodeUrl);
+        if (response.ok) {
+          const data = await response.json();
+          setLocation(data.results["618202"][0].city);
+        } else {
+          console.error("Failed to fetch zipcode data");
+        }
+      } catch (error) {
+        console.error("Error fetching zipcode data:", error);
+      }
+    };
+
+    fetchLocation();
   }, []);
 
   if (status === "loading") {
@@ -112,11 +133,16 @@ const Profile = () => {
               {user?.name}
             </Heading>
             <Text> {user?.email}</Text>
-            <Text>{user?.zipcode}</Text>
-            <Text>{user?.experience}</Text>
+            <Text>{location}</Text>
+            <Text size="super" className="text-sky-200">
+              {user?.experience}
+            </Text>
             <ul className="flex flex-col gap-1 mt-2">
               {user?.certification.map((certificate, index) => (
-                <li key={index} className="flex bg-gray-100 max-w-fit px-1">
+                <li
+                  key={index}
+                  className="flex bg-gray-100 max-w-fit px-1 rounded-sm"
+                >
                   {certificate}
                 </li>
               ))}
